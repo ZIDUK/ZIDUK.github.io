@@ -13,12 +13,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        /* --- BRAND VARIABLES (Corporate Look) --- */
+        /* --- BRAND VARIABLES (Corporate Gradient Look) --- */
         :root {
             --dark-bg: #000000;
             --light-text: #EAEAEA;
-            --primary-accent: #007BFF; /* Corporate Blue */
-            --secondary-accent: #00F5D4; /* Electric Cyan for highlights */
+            --primary-accent-start: #007BFF; /* Corporate Blue */
+            --primary-accent-end: #8A2BE2;   /* BlueViolet */
+            --accent-gradient: linear-gradient(90deg, var(--primary-accent-start), var(--primary-accent-end));
             --card-bg: #111111;
             --border-color: #222222;
         }
@@ -51,13 +52,8 @@
 
         section {
             padding: 100px 0;
-            border-bottom: 1px solid var(--border-color);
         }
         
-        section:last-of-type {
-            border-bottom: none;
-        }
-
         h1, h2, h3 {
             font-weight: 600;
             line-height: 1.2;
@@ -76,8 +72,11 @@
             letter-spacing: -1px;
         }
         
-        h2 span {
-            color: var(--primary-accent);
+        h1 span, h2 span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         p {
@@ -92,18 +91,14 @@
             color: #C0C0C0;
         }
 
-        /* --- NAVIGATION --- */
-        .navbar {
+        /* --- HEADER (Static) --- */
+        .header {
             padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(12px);
-            z-index: 1000;
+            background-color: #000000;
             border-bottom: 1px solid var(--border-color);
         }
         
-        .navbar .container {
+        .header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -118,7 +113,10 @@
         }
         
         .logo span {
-            color: var(--primary-accent);
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             font-weight: 700;
         }
 
@@ -145,28 +143,28 @@
         }
         
         .cta-button-nav {
-            background-color: var(--primary-accent);
+            background: var(--accent-gradient);
             color: #FFFFFF;
             padding: 10px 22px;
+            border: none;
             border-radius: 6px;
             font-weight: 500;
             font-size: 0.95rem;
             cursor: pointer;
             text-decoration: none;
-            transition: background-color 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         .cta-button-nav:hover {
-            background-color: #0069D9;
+            transform: scale(1.05);
         }
 
         /* --- HERO SECTION --- */
         #hero {
-            padding-top: 200px;
-            padding-bottom: 150px;
+            padding-top: 100px;
+            padding-bottom: 100px;
             display: flex;
             align-items: center;
-            min-height: 90vh;
         }
         
         .hero-content {
@@ -193,33 +191,38 @@
             height: 100%;
             top: 0;
             left: 0;
-            background: linear-gradient(45deg, var(--primary-accent), var(--secondary-accent));
+            background: linear-gradient(45deg, var(--primary-accent-start), var(--primary-accent-end));
             border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.25;
+            filter: blur(90px);
+            opacity: 0.20;
             z-index: -1;
         }
         
         .cta-button-hero {
-            background-color: var(--primary-accent);
+            background: var(--accent-gradient);
             color: #FFFFFF;
             padding: 16px 36px;
+            border: none;
             border-radius: 6px;
             font-size: 1.1rem;
             font-weight: 500;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             margin-top: 20px;
         }
         
         .cta-button-hero:hover {
-            background-color: #0069D9;
-            transform: translateY(-3px);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.15);
         }
 
         /* --- SERVICES/SOLUTION SECTION --- */
+        #solution {
+            border-top: 1px solid var(--border-color);
+        }
+        
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -231,10 +234,21 @@
             padding: 40px;
             border-radius: 12px;
             border: 1px solid var(--border-color);
-            border-top: 3px solid var(--primary-accent);
+            position: relative;
+            overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-gradient);
+        }
+        
         .service-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -242,8 +256,12 @@
 
         .service-card .icon {
             font-size: 2.2rem;
-            color: var(--primary-accent);
             margin-bottom: 25px;
+            /* Applying gradient to icon */
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         .service-card h3 {
@@ -267,15 +285,15 @@
         .step-card .step-number {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary-accent);
             margin-bottom: 20px;
-            background-color: rgba(0, 123, 255, 0.1);
+            background: var(--accent-gradient);
             width: 60px;
             height: 60px;
             border-radius: 50%;
             display: inline-flex;
             justify-content: center;
             align-items: center;
+            color: #FFFFFF;
         }
         
         .step-card h3 {
@@ -294,34 +312,79 @@
 
         /* --- FOOTER --- */
         footer {
-            padding: 40px 0;
-            background-color: var(--card-bg);
+            padding: 60px 0;
+            background-color: #050505;
             border-top: 1px solid var(--border-color);
         }
         
-        .footer-content {
-            text-align: center;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
         }
         
-        .footer-content p {
-            color: #888;
+        .footer-about h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -1px;
             margin-bottom: 15px;
         }
+
+        .footer-about h3 span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
         
-        .footer-socials a {
-            color: #888;
-            font-size: 1.5rem;
-            margin: 0 15px;
+        .footer-links h4, .footer-social h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--light-text);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #B0B0B0;
+            text-decoration: none;
             transition: color 0.3s ease;
         }
         
-        .footer-socials a:hover {
-            color: var(--primary-accent);
+        .footer-links a:hover {
+            color: var(--primary-accent-end);
+        }
+        
+        .social-icons a {
+            color: #B0B0B0;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-accent-end);
+        }
+        
+        .footer-copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            color: #888;
         }
 
         /* --- RESPONSIVE --- */
         @media(max-width: 992px) {
-            .hero-content {
+            .hero-content, .services-grid, .footer-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
@@ -329,10 +392,7 @@
                 text-align: center;
             }
             .hero-visual {
-                display: none; /* Hide visual on smaller screens for simplicity */
-            }
-            .services-grid {
-                grid-template-columns: 1fr;
+                display: none;
             }
         }
         
@@ -340,7 +400,7 @@
             h1 { font-size: 2.8rem; letter-spacing: -1px;}
             h2 { font-size: 2.2rem; }
             .nav-links {
-                display: none; /* Simplification for mobile */
+                display: none;
             }
             .how-it-works-grid {
                 grid-template-columns: 1fr;
@@ -350,7 +410,7 @@
 </head>
 <body>
 
-    <nav class="navbar">
+    <header class="header">
         <div class="container">
             <a href="#hero" class="logo">Agent<span>Biz</span></a>
             <ul class="nav-links">
@@ -360,7 +420,7 @@
             </ul>
             <a href="#contact" class="cta-button-nav">Request a Demo</a>
         </div>
-    </nav>
+    </header>
 
     <main>
         <section id="hero">
@@ -381,7 +441,7 @@
 
         <section id="solution">
             <div class="container">
-                <h2>An Intelligent Agent for Every Business Function.</h2>
+                <h2>An Intelligent Agent for Every Business Function</h2>
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="icon"><i class="fas fa-sitemap"></i></div>
@@ -404,7 +464,7 @@
 
         <section id="how-it-works">
             <div class="container">
-                 <h2>From Idea to Agent <span>in 3 Steps.</span></h2>
+                 <h2>From Idea to Agent <span>in 3 Steps</span></h2>
                  <div class="how-it-works-grid">
                      <div class="step-card">
                          <div class="step-number">1</div>
@@ -431,17 +491,35 @@
                 <p class="lead">Let's discuss how an AgentBiz agent can transform your operations. Schedule a free demo and we will show you the true potential for your specific business case.</p>
                 <a href="mailto:hello@agentbiz.ai?subject=Demo Request for AgentBiz" class="cta-button-hero">Request a Demo</a>
             </div>
-        section>
+        </section>
     </main>
     
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 AgentBiz. All rights reserved.</p>
-                <div class="footer-socials">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="X (formerly Twitter)"><i class="fab fa-twitter"></i></a>
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Agent<span>Biz</span></h3>
+                    <p>Autonomous AI agents for your business. We help you automate complexity and accelerate growth.</p>
                 </div>
+                <div class="footer-links">
+                    <h4>Sitemap</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#solution">Solution</a></li>
+                        <li><a href="#how-it-works">Process</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="X (formerly Twitter)"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 AgentBiz. All rights reserved.</p>
             </div>
         </div>
     </footer>
