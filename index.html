@@ -183,7 +183,6 @@
             height: 400px;
         }
         
-        /* Abstract visual effect for Hero section */
         .hero-visual::before {
             content: '';
             position: absolute;
@@ -198,7 +197,8 @@
             z-index: -1;
         }
         
-        .cta-button-hero {
+        /* --- GENERAL BUTTON STYLE --- */
+        .cta-button {
             background: var(--accent-gradient);
             color: #FFFFFF;
             padding: 16px 36px;
@@ -213,7 +213,7 @@
             margin-top: 20px;
         }
         
-        .cta-button-hero:hover {
+        .cta-button:hover {
             transform: translateY(-3px) scale(1.03);
             box-shadow: 0 10px 20px rgba(138, 43, 226, 0.15);
         }
@@ -257,7 +257,6 @@
         .service-card .icon {
             font-size: 2.2rem;
             margin-bottom: 25px;
-            /* Applying gradient to icon */
             background: var(--accent-gradient);
             -webkit-background-clip: text;
             background-clip: text;
@@ -300,14 +299,99 @@
             color: var(--light-text);
             margin-bottom: 10px;
         }
+
+        /* --- TECHNOLOGY CAROUSEL SECTION --- */
+        #tech-stack {
+            padding: 80px 0;
+        }
+
+        .tech-stack-container h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #888;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .scroller {
+            overflow: hidden;
+            -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+            mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+        }
+
+        .scroller-inner {
+            display: flex;
+            gap: 60px;
+            width: max-content;
+            animation: scroll 30s linear infinite;
+        }
         
-        /* --- CONTACT SECTION --- */
+        .scroller-inner svg {
+            height: 40px;
+            fill: #888;
+            transition: fill 0.3s ease;
+        }
+        
+        .scroller-inner svg:hover {
+            fill: var(--light-text);
+        }
+
+        @keyframes scroll {
+            to {
+                transform: translateX(calc(-50% - 30px)); /* -50% of content and half of one gap */
+            }
+        }
+        
+        /* --- CONTACT FORM SECTION --- */
         #contact {
             text-align: center;
+            background-color: var(--card-bg);
         }
         
         #contact .container {
             max-width: 800px;
+        }
+        
+        .contact-form {
+            display: grid;
+            gap: 20px;
+            text-align: left;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #B0B0B0;
+        }
+        
+        .form-group input, .form-group textarea {
+            background-color: #000000;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 14px;
+            color: var(--light-text);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-accent-start);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
         }
 
         /* --- FOOTER --- */
@@ -388,7 +472,7 @@
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-            .hero-text {
+            .hero-text, .footer-about, .footer-links, .footer-social {
                 text-align: center;
             }
             .hero-visual {
@@ -416,6 +500,7 @@
             <ul class="nav-links">
                 <li><a href="#solution">Solution</a></li>
                 <li><a href="#how-it-works">Process</a></li>
+                <li><a href="#tech-stack">Technology</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <a href="#contact" class="cta-button-nav">Request a Demo</a>
@@ -431,7 +516,7 @@
                         <p class="lead">
                            We build bespoke AI agents that work 24/7 for your business—executing tasks, analyzing data, and freeing your team to focus on what truly matters.
                         </p>
-                        <a href="#contact" class="cta-button-hero">Schedule a Discovery Call</a>
+                        <a href="#contact" class="cta-button">Schedule a Discovery Call</a>
                     </div>
                     <div class="hero-visual">
                         </div>
@@ -484,12 +569,49 @@
                  </div>
             </div>
         </section>
+        
+        <section id="tech-stack">
+            <div class="tech-stack-container">
+                <h2>BUILT WITH A WORLD-CLASS STACK</h2>
+                <div class="scroller">
+                    <div class="scroller-inner">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>OpenAI</title><path d="M22.2819 12.8526C22.2819 12.0293 22.4333 11.206 22.7362 10.3827L23.9999 8.33642L24 8.33641L20.2558 7.31334L19.0118 9.33994C18.5042 8.99513 17.9157 8.75259 17.2252 8.63132L17.5898 3.56847L14.072 2.4541L13.7074 7.51695C13.0169 7.39568 12.3365 7.31334 11.6051 7.31334C10.8128 7.31334 10.0814 7.39568 9.42058 7.51695L9.05592 2.4541L5.53814 3.56847L5.90279 8.63132C5.21229 8.75259 4.62383 8.99513 4.11621 9.33994L2.87221 7.31334L0 8.33641L1.24399 10.3827C1.54694 11.206 1.71808 12.0293 1.71808 12.8526C1.71808 13.6759 1.56665 14.5189 1.2637 15.3422L0.0197068 17.3885L3.76391 18.4116L4.98819 16.385C5.49581 16.7298 6.08427 16.9723 6.77477 17.0936L6.41011 22.1565L9.9279 23.2709L10.2925 18.208C10.983 18.3293 11.6635 18.4116 12.3949 18.4116C13.1263 18.4116 13.8473 18.3293 14.5378 18.208L14.9025 23.2709L18.4203 22.1565L18.0556 17.0936C18.7461 16.9723 19.3346 16.7298 19.8422 16.385L21.1059 18.4116L24 17.3885L22.756 15.3422C22.4531 14.5189 22.2819 13.6759 22.2819 12.8526ZM12.3949 16.4883C10.1628 16.4883 8.34966 14.8504 8.34966 12.8526C8.34966 10.8548 10.1628 9.21695 12.3949 9.21695C14.627 9.21695 16.4402 10.8548 16.4402 12.8526C16.4402 14.8504 14.627 16.4883 12.3949 16.4883Z"/></svg>
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Anthropic</title><path d="M22.611 22.7512H1.389V1.2488H22.611V22.7512ZM4.4442 19.6959H19.5558V4.3041H4.4442V19.6959ZM9.1107 15.8624H12.7218V8.1376H9.1107V15.8624Z"/></svg>
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Nvidia</title><path d="M15.42 24V0h5.367v10.334h.14L24 3.737V0h-6.242l-4.912 8.33h-.14V0H7.334v24h5.37V13.666h-.14L9.408 20.263V24h6.241l4.905-8.33h.14V24zM0 10.334V3.738h3.376v13.056H0v-6.46z"/></svg>
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gemini</title><path d="M12.758 9.923L9.922 15.61l-2.836-5.687H2.91l5.447 10.923.04.079.04-.079 5.448-10.923zM21.09 3.164l-5.448 10.923-.04.079-.04-.079L10.115 3.164h4.17l1.564 3.136 1.563-3.136z"/></svg>
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>OpenAI</title><path d="M22.2819 12.8526C22.2819 12.0293 22.4333 11.206 22.7362 10.3827L23.9999 8.33642L24 8.33641L20.2558 7.31334L19.0118 9.33994C18.5042 8.99513 17.9157 8.75259 17.2252 8.63132L17.5898 3.56847L14.072 2.4541L13.7074 7.51695C13.0169 7.39568 12.3365 7.31334 11.6051 7.31334C10.8128 7.31334 10.0814 7.39568 9.42058 7.51695L9.05592 2.4541L5.53814 3.56847L5.90279 8.63132C5.21229 8.75259 4.62383 8.99513 4.11621 9.33994L2.87221 7.31334L0 8.33641L1.24399 10.3827C1.54694 11.206 1.71808 12.0293 1.71808 12.8526C1.71808 13.6759 1.56665 14.5189 1.2637 15.3422L0.0197068 17.3885L3.76391 18.4116L4.98819 16.385C5.49581 16.7298 6.08427 16.9723 6.77477 17.0936L6.41011 22.1565L9.9279 23.2709L10.2925 18.208C10.983 18.3293 11.6635 18.4116 12.3949 18.4116C13.1263 18.4116 13.8473 18.3293 14.5378 18.208L14.9025 23.2709L18.4203 22.1565L18.0556 17.0936C18.7461 16.9723 19.3346 16.7298 19.8422 16.385L21.1059 18.4116L24 17.3885L22.756 15.3422C22.4531 14.5189 22.2819 13.6759 22.2819 12.8526ZM12.3949 16.4883C10.1628 16.4883 8.34966 14.8504 8.34966 12.8526C8.34966 10.8548 10.1628 9.21695 12.3949 9.21695C14.627 9.21695 16.4402 10.8548 16.4402 12.8526C16.4402 14.8504 14.627 16.4883 12.3949 16.4883Z"/></svg>
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Anthropic</title><path d="M22.611 22.7512H1.389V1.2488H22.611V22.7512ZM4.4442 19.6959H19.5558V4.3041H4.4442V19.6959ZM9.1107 15.8624H12.7218V8.1376H9.1107V15.8624Z"/></svg>
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Nvidia</title><path d="M15.42 24V0h5.367v10.334h.14L24 3.737V0h-6.242l-4.912 8.33h-.14V0H7.334v24h5.37V13.666h-.14L9.408 20.263V24h6.241l4.905-8.33h.14V24zM0 10.334V3.738h3.376v13.056H0v-6.46z"/></svg>
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gemini</title><path d="M12.758 9.923L9.922 15.61l-2.836-5.687H2.91l5.447 10.923.04.079.04-.079 5.448-10.923zM21.09 3.164l-5.448 10.923-.04.079-.04-.079L10.115 3.164h4.17l1.564 3.136 1.563-3.136z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section id="contact">
             <div class="container">
                 <h2>Ready to deploy your first AI agent?</h2>
-                <p class="lead">Let's discuss how an AgentBiz agent can transform your operations. Schedule a free demo and we will show you the true potential for your specific business case.</p>
-                <a href="mailto:hello@agentbiz.ai?subject=Demo Request for AgentBiz" class="cta-button-hero">Request a Demo</a>
+                <p class="lead">Let's discuss how an AgentBiz agent can transform your operations. Fill out the form below to schedule a free demo, and we will show you the true potential for your specific business case.</p>
+                
+                <form class="contact-form" action="https://formspree.io/f/xblyvyyr" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Work Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">How can we help you?</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
             </div>
         </section>
     </main>
@@ -507,6 +629,7 @@
                         <li><a href="#hero">Home</a></li>
                         <li><a href="#solution">Solution</a></li>
                         <li><a href="#how-it-works">Process</a></li>
+                        <li><a href="#tech-stack">Technology</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
