@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgentBiz - Automatiza la Complejidad. Acelera el Crecimiento.</title>
-    <meta name="description" content="En AgentBiz, creamos agentes de IA autónomos que se integran a tus operaciones, automatizan procesos complejos y aceleran el crecimiento de tu negocio.">
+    <title>AgentBiz - Automate Complexity. Accelerate Growth.</title>
+    <meta name="description" content="At AgentBiz, we build autonomous AI agents that integrate into your operations, automate complex processes, and accelerate your business growth.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        /* --- VARIABLES DE LA MARCA --- */
+        /* --- BRAND VARIABLES (Corporate Look) --- */
         :root {
-            --dark-bg: #0D1B2A;
-            --light-text: #F0F0F0;
-            --accent-color: #00F5D4; /* Cian Eléctrico */
-            --secondary-accent: #4A6FA5;
-            --card-bg: #1B263B;
+            --dark-bg: #000000;
+            --light-text: #EAEAEA;
+            --primary-accent: #007BFF; /* Corporate Blue */
+            --secondary-accent: #00F5D4; /* Electric Cyan for highlights */
+            --card-bg: #111111;
+            --border-color: #222222;
         }
 
-        /* --- ESTILOS GENERALES --- */
+        /* --- GENERAL STYLES --- */
         * {
             margin: 0;
             padding: 0;
@@ -34,20 +35,27 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--dark-bg);
             color: var(--light-text);
-            line-height: 1.6;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         section {
-            padding: 80px 0;
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        section:last-of-type {
+            border-bottom: none;
         }
 
         h1, h2, h3 {
@@ -56,42 +64,49 @@
         }
         
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -1.5px;
         }
 
         h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
+            letter-spacing: -1px;
         }
         
         h2 span {
-            color: var(--accent-color);
+            color: var(--primary-accent);
         }
 
         p {
             margin-bottom: 20px;
             font-weight: 300;
+            color: #B0B0B0;
+        }
+        
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: #C0C0C0;
         }
 
-        /* --- NAVEGACIÓN --- */
+        /* --- NAVIGATION --- */
         .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             padding: 20px 0;
             position: fixed;
             width: 100%;
-            background-color: rgba(13, 27, 42, 0.8);
-            backdrop-filter: blur(10px);
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(12px);
             z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
         }
         
         .navbar .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
         }
 
         .logo {
@@ -99,141 +114,164 @@
             font-weight: 700;
             color: var(--light-text);
             text-decoration: none;
+            letter-spacing: -1px;
         }
         
         .logo span {
-            color: var(--accent-color);
-            font-weight: 600;
+            color: var(--primary-accent);
+            font-weight: 700;
         }
 
         .nav-links {
             display: flex;
+            align-items: center;
             list-style: none;
         }
 
         .nav-links li {
-            margin-left: 30px;
+            margin-left: 35px;
         }
 
         .nav-links a {
-            color: var(--light-text);
+            color: #B0B0B0;
             text-decoration: none;
-            font-weight: 400;
+            font-weight: 500;
+            font-size: 0.95rem;
             transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--accent-color);
+            color: var(--light-text);
         }
         
         .cta-button-nav {
-            background-color: var(--accent-color);
-            color: var(--dark-bg);
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-weight: 600;
+            background-color: var(--primary-accent);
+            color: #FFFFFF;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.95rem;
             cursor: pointer;
             text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: background-color 0.3s ease;
         }
 
         .cta-button-nav:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 245, 212, 0.2);
+            background-color: #0069D9;
         }
 
-
-        /* --- SECCIÓN DE HÉROE --- */
+        /* --- HERO SECTION --- */
         #hero {
-            padding-top: 180px;
-            text-align: center;
-            min-height: 80vh;
+            padding-top: 200px;
+            padding-bottom: 150px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        #hero h1 {
-            margin-bottom: 20px;
+            align-items: center;
+            min-height: 90vh;
         }
         
-        #hero h1 span {
-            color: var(--accent-color);
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
         }
-
-        #hero .subtitle {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            font-weight: 300;
+        
+        .hero-text {
+            text-align: left;
+        }
+        
+        .hero-visual {
+            position: relative;
+            height: 400px;
+        }
+        
+        /* Abstract visual effect for Hero section */
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(45deg, var(--primary-accent), var(--secondary-accent));
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.25;
+            z-index: -1;
         }
         
         .cta-button-hero {
-            background-color: var(--accent-color);
-            color: var(--dark-bg);
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
+            background-color: var(--primary-accent);
+            color: #FFFFFF;
+            padding: 16px 36px;
+            border-radius: 6px;
             font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: 500;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
         }
         
         .cta-button-hero:hover {
+            background-color: #0069D9;
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 245, 212, 0.25);
         }
 
-        /* --- SECCIÓN DE SOLUCIÓN --- */
+        /* --- SERVICES/SOLUTION SECTION --- */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
 
         .service-card {
             background-color: var(--card-bg);
             padding: 40px;
-            border-radius: 10px;
-            border-left: 3px solid var(--accent-color);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            border-top: 3px solid var(--primary-accent);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .service-card .icon {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            color: var(--primary-accent);
+            margin-bottom: 25px;
         }
         
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 15px;
+            color: var(--light-text);
         }
         
-        /* --- SECCIÓN CÓMO FUNCIONA --- */
+        /* --- HOW IT WORKS SECTION --- */
+        #how-it-works {
+            background-color: var(--card-bg);
+        }
+        
         .how-it-works-grid {
              display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             text-align: center;
         }
         
-        .step-card .icon {
-            font-size: 3rem;
-            color: var(--secondary-accent);
+        .step-card .step-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-accent);
             margin-bottom: 20px;
-            background-color: var(--card-bg);
-            width: 100px;
-            height: 100px;
+            background-color: rgba(0, 123, 255, 0.1);
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: inline-flex;
             justify-content: center;
@@ -241,51 +279,71 @@
         }
         
         .step-card h3 {
-            color: var(--accent-color);
+            color: var(--light-text);
             margin-bottom: 10px;
         }
         
-        /* --- SECCIÓN CONTACTO --- */
+        /* --- CONTACT SECTION --- */
         #contact {
             text-align: center;
-            background-color: var(--card-bg);
         }
         
         #contact .container {
-            max-width: 700px;
+            max-width: 800px;
         }
 
         /* --- FOOTER --- */
         footer {
+            padding: 40px 0;
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer-content {
             text-align: center;
-            padding: 30px 0;
-            border-top: 1px solid var(--secondary-accent);
+        }
+        
+        .footer-content p {
+            color: #888;
+            margin-bottom: 15px;
         }
         
         .footer-socials a {
-            color: var(--light-text);
+            color: #888;
             font-size: 1.5rem;
-            margin: 0 10px;
+            margin: 0 15px;
             transition: color 0.3s ease;
         }
         
         .footer-socials a:hover {
-            color: var(--accent-color);
+            color: var(--primary-accent);
         }
 
         /* --- RESPONSIVE --- */
+        @media(max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-text {
+                text-align: center;
+            }
+            .hero-visual {
+                display: none; /* Hide visual on smaller screens for simplicity */
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         @media(max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-
-            .navbar .container {
-                flex-direction: column;
-            }
+            h1 { font-size: 2.8rem; letter-spacing: -1px;}
+            h2 { font-size: 2.2rem; }
             .nav-links {
-                margin-top: 15px;
+                display: none; /* Simplification for mobile */
             }
-            .nav-links li {
-                margin: 0 15px;
+            .how-it-works-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -296,42 +354,49 @@
         <div class="container">
             <a href="#hero" class="logo">Agent<span>Biz</span></a>
             <ul class="nav-links">
-                <li><a href="#solution">Solución</a></li>
-                <li><a href="#how-it-works">Cómo Funciona</a></li>
+                <li><a href="#solution">Solution</a></li>
+                <li><a href="#how-it-works">Process</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="#contact" class="cta-button-nav">Solicita una Demo</a>
+            <a href="#contact" class="cta-button-nav">Request a Demo</a>
         </div>
     </nav>
 
     <main>
         <section id="hero">
             <div class="container">
-                <h1>Automatiza la Complejidad. <span>Acelera el Crecimiento.</span></h1>
-                <p class="subtitle">
-                    Creamos agentes de IA a medida que trabajan 24/7 para tu negocio, ejecutando tareas, analizando datos y liberando a tu equipo para que se enfoque en lo que realmente importa.
-                </p>
-                <a href="#contact" class="cta-button-hero">Solicita una Demo Personalizada</a>
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Automate Complexity. <span>Accelerate Growth.</span></h1>
+                        <p class="lead">
+                           We build bespoke AI agents that work 24/7 for your business—executing tasks, analyzing data, and freeing your team to focus on what truly matters.
+                        </p>
+                        <a href="#contact" class="cta-button-hero">Schedule a Discovery Call</a>
+                    </div>
+                    <div class="hero-visual">
+                        </div>
+                </div>
             </div>
         </section>
 
         <section id="solution">
             <div class="container">
-                <h2>Menos Procesos Manuales. <span>Más Resultados Inteligentes.</span></h2>
+                <h2>An Intelligent Agent for Every Business Function.</h2>
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="icon"><i class="fas fa-sitemap"></i></div>
-                        <h3>Agentes de Datos Híbridos</h3>
-                        <p>Nuestros agentes se conectan a todas tus fuentes de información: bases de datos, APIs, documentos y más, para tener una visión completa y tomar acciones informadas.</p>
+                        <h3>Hybrid Data Agents</h3>
+                        <p>Our agents connect to all your information sources: databases, APIs, internal documents, and more, to gain a complete understanding and take informed actions.</p>
                     </div>
                     <div class="service-card">
                         <div class="icon"><i class="fas fa-cogs"></i></div>
-                        <h3>Automatización de Flujos de Trabajo</h3>
-                        <p>Desde procesar facturas y responder a clientes hasta generar reportes complejos. Diseñamos agentes que ejecutan flujos de trabajo de varios pasos de forma autónoma y sin errores.</p>
+                        <h3>Workflow Automation</h3>
+                        <p>From processing invoices and responding to customer queries to generating complex reports. We design agents that execute multi-step workflows autonomously and flawlessly.</p>
                     </div>
                     <div class="service-card">
                         <div class="icon"><i class="fas fa-chart-line"></i></div>
-                        <h3>Monitoreo y Optimización</h3>
-                        <p>No solo construimos tus agentes, sino que los monitoreamos y optimizamos continuamente para asegurar que operen con máxima eficiencia y se adapten a las nuevas necesidades de tu negocio.</p>
+                        <h3>Continuous Optimization</h3>
+                        <p>We don't just build your agents. We monitor and optimize them continuously to ensure peak performance and adaptation to your evolving business needs.</p>
                     </div>
                 </div>
             </div>
@@ -339,22 +404,22 @@
 
         <section id="how-it-works">
             <div class="container">
-                 <h2>De la Idea al Agente <span>en 3 Pasos</span></h2>
+                 <h2>From Idea to Agent <span>in 3 Steps.</span></h2>
                  <div class="how-it-works-grid">
                      <div class="step-card">
-                         <div class="icon"><i class="fas fa-map-signs"></i></div>
-                         <h3>1. Descubrimiento y Estrategia</h3>
-                         <p>Analizamos tus procesos actuales para identificar las mejores oportunidades de automatización. Mapeamos el flujo de trabajo y definimos los objetivos clave del agente.</p>
+                         <div class="step-number">1</div>
+                         <h3>Discovery & Strategy</h3>
+                         <p>We analyze your current processes to identify the best opportunities for automation. We map the workflow and define the agent's key objectives and KPIs.</p>
                      </div>
                      <div class="step-card">
-                         <div class="icon"><i class="fas fa-laptop-code"></i></div>
-                         <h3>2. Desarrollo e Integración</h3>
-                         <p>Construimos tu agente de IA a medida, lo integramos de forma segura con tus sistemas existentes (CRM, ERP, etc.) y realizamos pruebas exhaustivas para garantizar su fiabilidad.</p>
+                         <div class="step-number">2</div>
+                         <h3>Development & Integration</h3>
+                         <p>We build your custom AI agent, securely integrate it with your existing systems (CRM, ERP, etc.), and perform rigorous testing to ensure its reliability.</p>
                      </div>
                      <div class="step-card">
-                         <div class="icon"><i class="fas fa-rocket"></i></div>
-                         <h3>3. Despliegue y Crecimiento</h3>
-                         <p>Lanzamos tu primer agente y monitoreamos su impacto. Recopilamos datos de rendimiento para optimizarlo y escalar la automatización a otras áreas de tu empresa.</p>
+                         <div class="step-number">3</div>
+                         <h3>Deployment & Growth</h3>
+                         <p>We launch your first agent and monitor its impact. We gather performance data to optimize and scale automation to other areas of your business.</p>
                      </div>
                  </div>
             </div>
@@ -362,19 +427,21 @@
 
         <section id="contact">
             <div class="container">
-                <h2>¿Listo para poner a trabajar a tu primer agente de IA?</h2>
-                <p>Hablemos de cómo un agente de AgentBiz puede transformar tus operaciones. Agenda una demo gratuita y te mostraremos el potencial real para tu negocio específico.</p>
-                <a href="mailto:hola@agentbiz.ai?subject=Solicitud de Demo para AgentBiz" class="cta-button-hero">Agendar una Demo</a>
+                <h2>Ready to deploy your first AI agent?</h2>
+                <p class="lead">Let's discuss how an AgentBiz agent can transform your operations. Schedule a free demo and we will show you the true potential for your specific business case.</p>
+                <a href="mailto:hello@agentbiz.ai?subject=Demo Request for AgentBiz" class="cta-button-hero">Request a Demo</a>
             </div>
-        </section>
+        section>
     </main>
     
     <footer>
         <div class="container">
-            <p>&copy; 2025 AgentBiz. Todos los derechos reservados.</p>
-            <div class="footer-socials">
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" aria-label="X (formerly Twitter)"><i class="fab fa-twitter"></i></a>
+            <div class="footer-content">
+                <p>&copy; 2025 AgentBiz. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="X (formerly Twitter)"><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
         </div>
     </footer>
