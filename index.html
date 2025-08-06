@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgentBiz - Automate Complexity. Accelerate Growth.</title>
-    <meta name="description" content="At AgentBiz, we build autonomous AI agents that integrate into your operations, automate complex processes, and accelerate your business growth.">
+    <title>AgentBiz - Strategic AI Agents for Business Transformation</title>
+    <meta name="description" content="AgentBiz designs and deploys custom AI agents to automate your critical business processes, unlock data insights, and drive operational efficiency.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        /* --- BRAND VARIABLES (Corporate Gradient Look) --- */
+        /* --- BRAND VARIABLES --- */
         :root {
             --dark-bg: #000000;
-            --light-text: #EAEAEA;
-            --primary-accent-start: #007BFF; /* Corporate Blue */
-            --primary-accent-end: #8A2BE2;   /* BlueViolet */
+            --light-text: #F5F5F7;
+            --secondary-text: #A1A1A6;
+            --primary-accent-start: #007BFF; 
+            --primary-accent-end: #8A2BE2;
             --accent-gradient: linear-gradient(90deg, var(--primary-accent-start), var(--primary-accent-end));
             --card-bg: #111111;
             --border-color: #222222;
@@ -54,22 +55,20 @@
             padding: 100px 0;
         }
         
-        h1, h2, h3 {
-            font-weight: 600;
+        h1, h2, h3, h4 {
+            font-weight: 700;
             line-height: 1.2;
+            letter-spacing: -1px;
         }
         
         h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            letter-spacing: -1.5px;
+            font-size: 3.8rem;
         }
 
         h2 {
             font-size: 2.8rem;
             text-align: center;
             margin-bottom: 70px;
-            letter-spacing: -1px;
         }
         
         h1 span, h2 span {
@@ -81,14 +80,13 @@
 
         p {
             margin-bottom: 20px;
-            font-weight: 300;
-            color: #B0B0B0;
+            font-weight: 400;
+            color: var(--secondary-text);
         }
         
         .lead {
             font-size: 1.25rem;
-            font-weight: 300;
-            color: #C0C0C0;
+            color: #D2D2D7;
         }
 
         /* --- HEADER (Static) --- */
@@ -106,7 +104,7 @@
 
         .logo {
             font-size: 1.8rem;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--light-text);
             text-decoration: none;
             letter-spacing: -1px;
@@ -117,7 +115,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .nav-links {
@@ -131,7 +129,7 @@
         }
 
         .nav-links a {
-            color: #B0B0B0;
+            color: var(--secondary-text);
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
@@ -142,94 +140,82 @@
             color: var(--light-text);
         }
         
-        .cta-button-nav {
-            background: var(--accent-gradient);
-            color: #FFFFFF;
-            padding: 10px 22px;
-            border: none;
-            border-radius: 6px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-
-        .cta-button-nav:hover {
-            transform: scale(1.05);
-        }
-
-        /* --- HERO SECTION --- */
-        #hero {
-            padding-top: 100px;
-            padding-bottom: 100px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 60px;
-        }
-        
-        .hero-text {
-            text-align: left;
-        }
-        
-        .hero-visual {
-            position: relative;
-            height: 400px;
-        }
-        
-        .hero-visual::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: linear-gradient(45deg, var(--primary-accent-start), var(--primary-accent-end));
-            border-radius: 50%;
-            filter: blur(90px);
-            opacity: 0.20;
-            z-index: -1;
-        }
-        
         /* --- GENERAL BUTTON STYLE --- */
         .cta-button {
             background: var(--accent-gradient);
             color: #FFFFFF;
             padding: 16px 36px;
             border: none;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            font-weight: 500;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-top: 20px;
         }
         
         .cta-button:hover {
             transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.15);
+            box-shadow: 0 10px 25px rgba(138, 43, 226, 0.2);
         }
 
-        /* --- SERVICES/SOLUTION SECTION --- */
-        #solution {
-            border-top: 1px solid var(--border-color);
+        /* --- HERO SECTION --- */
+        #hero {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            text-align: center;
         }
         
-        .services-grid {
+        #hero .container {
+            max-width: 900px;
+        }
+        
+        #hero h1 {
+            margin-bottom: 25px;
+        }
+        
+        #hero .lead {
+            margin-bottom: 30px;
+        }
+        
+        /* --- CHALLENGES SECTION (Inspired by Koombea's "We solve") --- */
+        #challenges {
+            background-color: var(--card-bg);
+        }
+
+        .challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .challenge-card {
+            background-color: #0A0A0A;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .challenge-card .icon {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-accent-start);
+        }
+
+        .challenge-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- SOLUTION SECTION --- */
+        .solution-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
 
-        .service-card {
+        .solution-card {
             background-color: var(--card-bg);
             padding: 40px;
             border-radius: 12px;
@@ -239,7 +225,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .service-card::before {
+        .solution-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -249,32 +235,23 @@
             background: var(--accent-gradient);
         }
         
-        .service-card:hover {
+        .solution-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
-
-        .service-card .icon {
-            font-size: 2.2rem;
-            margin-bottom: 25px;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
         
-        .service-card h3 {
+        .solution-card h3 {
             font-size: 1.4rem;
             margin-bottom: 15px;
             color: var(--light-text);
         }
         
-        /* --- HOW IT WORKS SECTION --- */
-        #how-it-works {
+        /* --- PROCESS SECTION --- */
+        #process {
             background-color: var(--card-bg);
         }
         
-        .how-it-works-grid {
+        .process-grid {
              display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
@@ -283,7 +260,7 @@
         
         .step-card .step-number {
             font-size: 1.5rem;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 20px;
             background: var(--accent-gradient);
             width: 60px;
@@ -299,7 +276,7 @@
             color: var(--light-text);
             margin-bottom: 10px;
         }
-
+        
         /* --- TECHNOLOGY CAROUSEL SECTION --- */
         #tech-stack {
             padding: 80px 0;
@@ -340,14 +317,13 @@
 
         @keyframes scroll {
             to {
-                transform: translateX(calc(-50% - 30px)); /* -50% of content and half of one gap */
+                transform: translateX(calc(-50% - 30px));
             }
         }
         
         /* --- CONTACT FORM SECTION --- */
         #contact {
             text-align: center;
-            background-color: var(--card-bg);
         }
         
         #contact .container {
@@ -358,6 +334,7 @@
             display: grid;
             gap: 20px;
             text-align: left;
+            margin-top: 50px;
         }
         
         .form-group {
@@ -369,13 +346,13 @@
             margin-bottom: 8px;
             font-weight: 500;
             font-size: 0.9rem;
-            color: #B0B0B0;
+            color: var(--secondary-text);
         }
         
         .form-group input, .form-group textarea {
-            background-color: #000000;
+            background-color: #0A0A0A;
             border: 1px solid var(--border-color);
-            border-radius: 6px;
+            border-radius: 8px;
             padding: 14px;
             color: var(--light-text);
             font-family: 'Inter', sans-serif;
@@ -410,7 +387,7 @@
         
         .footer-about h3 {
             font-size: 1.8rem;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: -1px;
             margin-bottom: 15px;
         }
@@ -420,7 +397,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            font-weight: 700;
+            font-weight: 800;
         }
         
         .footer-links h4, .footer-social h4 {
@@ -439,7 +416,7 @@
         }
         
         .footer-links a {
-            color: #B0B0B0;
+            color: var(--secondary-text);
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -449,7 +426,7 @@
         }
         
         .social-icons a {
-            color: #B0B0B0;
+            color: var(--secondary-text);
             font-size: 1.5rem;
             margin-right: 20px;
             transition: color 0.3s ease;
@@ -468,15 +445,12 @@
 
         /* --- RESPONSIVE --- */
         @media(max-width: 992px) {
-            .hero-content, .services-grid, .footer-grid {
+            .hero-content, .challenges-grid, .solution-grid, .footer-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
             .hero-text, .footer-about, .footer-links, .footer-social {
                 text-align: center;
-            }
-            .hero-visual {
-                display: none;
             }
         }
         
@@ -486,7 +460,7 @@
             .nav-links {
                 display: none;
             }
-            .how-it-works-grid {
+            .process-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -497,74 +471,95 @@
     <header class="header">
         <div class="container">
             <a href="#hero" class="logo">Agent<span>Biz</span></a>
-            <ul class="nav-links">
-                <li><a href="#solution">Solution</a></li>
-                <li><a href="#how-it-works">Process</a></li>
-                <li><a href="#tech-stack">Technology</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="#contact" class="cta-button-nav">Request a Demo</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="#challenges">Challenges</a></li>
+                    <li><a href="#solutions">Solutions</a></li>
+                    <li><a href="#process">Our Process</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-button">Talk to an Expert</a>
         </div>
     </header>
 
     <main>
         <section id="hero">
             <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1>Automate Complexity. <span>Accelerate Growth.</span></h1>
-                        <p class="lead">
-                           We build bespoke AI agents that work 24/7 for your business—executing tasks, analyzing data, and freeing your team to focus on what truly matters.
-                        </p>
-                        <a href="#contact" class="cta-button">Schedule a Discovery Call</a>
+                <h1>Unlock Business Efficiency and <span>Drive ROI with Custom AI Agents</span></h1>
+                <p class="lead">
+                   We are a strategic partner in AI transformation. AgentBiz designs, builds, and deploys intelligent agents that automate your most critical processes, delivering measurable results from day one.
+                </p>
+                <a href="#contact" class="cta-button">Book a Strategy Call</a>
+            </div>
+        </section>
+        
+        <section id="challenges">
+            <div class="container">
+                <h2>We Solve Your Most Critical Business Challenges</h2>
+                <div class="challenges-grid">
+                    <div class="challenge-card">
+                        <div class="icon"><i class="fas fa-hourglass-half"></i></div>
+                        <h3>Inefficient Manual Processes</h3>
+                        <p>Your team spends valuable time on repetitive, manual tasks that are prone to human error and slow down your operations.</p>
                     </div>
-                    <div class="hero-visual">
-                        </div>
+                    <div class="challenge-card">
+                        <div class="icon"><i class="fas fa-cubes"></i></div>
+                        <h3>Isolated Data Silos</h3>
+                        <p>Critical information is trapped in different systems (CRM, ERP, documents), making it impossible to get a unified view for decision-making.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="icon"><i class="fas fa-users-cog"></i></div>
+                        <h3>Poor Customer Experience</h3>
+                        <p>Support teams are overwhelmed, leading to slow response times and a frustrating experience for your customers.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="icon"><i class="fas fa-chart-bar"></i></div>
+                        <h3>Lack of Actionable Insights</h3>
+                        <p>You have plenty of data, but lack the tools to analyze it effectively and extract the insights needed for strategic growth.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="solution">
+        <section id="solutions">
             <div class="container">
-                <h2>An Intelligent Agent for Every Business Function</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="icon"><i class="fas fa-sitemap"></i></div>
-                        <h3>Hybrid Data Agents</h3>
-                        <p>Our agents connect to all your information sources: databases, APIs, internal documents, and more, to gain a complete understanding and take informed actions.</p>
+                <h2>Our AI Agent Solutions</h2>
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h3>Business Intelligence Agents</h3>
+                        <p>Connects to your databases and analytics tools to answer complex data questions in natural language, create reports, and identify trends autonomously.</p>
                     </div>
-                    <div class="service-card">
-                        <div class="icon"><i class="fas fa-cogs"></i></div>
-                        <h3>Workflow Automation</h3>
-                        <p>From processing invoices and responding to customer queries to generating complex reports. We design agents that execute multi-step workflows autonomously and flawlessly.</p>
+                    <div class="solution-card">
+                        <h3>Process Automation Agents</h3>
+                        <p>Automates end-to-end workflows like invoice processing, lead qualification, or inventory management, integrating with your existing software.</p>
                     </div>
-                    <div class="service-card">
-                        <div class="icon"><i class="fas fa-chart-line"></i></div>
-                        <h3>Continuous Optimization</h3>
-                        <p>We don't just build your agents. We monitor and optimize them continuously to ensure peak performance and adaptation to your evolving business needs.</p>
+                    <div class="solution-card">
+                        <h3>Customer Support Agents</h3>
+                        <p>Provides instant, accurate support by accessing your knowledge base, handling routine queries, and escalating complex issues to human agents seamlessly.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="how-it-works">
+        <section id="process">
             <div class="container">
-                 <h2>From Idea to Agent <span>in 3 Steps</span></h2>
-                 <div class="how-it-works-grid">
+                 <h2>Our Proven Path to <span>AI-Powered Transformation</span></h2>
+                 <div class="process-grid">
                      <div class="step-card">
                          <div class="step-number">1</div>
-                         <h3>Discovery & Strategy</h3>
-                         <p>We analyze your current processes to identify the best opportunities for automation. We map the workflow and define the agent's key objectives and KPIs.</p>
+                         <h3>Strategy & Discovery</h3>
+                         <p>We partner with you to identify high-impact automation opportunities and design a custom AI roadmap aligned with your business goals.</p>
                      </div>
                      <div class="step-card">
                          <div class="step-number">2</div>
-                         <h3>Development & Integration</h3>
-                         <p>We build your custom AI agent, securely integrate it with your existing systems (CRM, ERP, etc.), and perform rigorous testing to ensure its reliability.</p>
+                         <h3>Agile Development & Integration</h3>
+                         <p>Our expert team builds your AI agent using an agile methodology, ensuring full integration with your systems and continuous feedback.</p>
                      </div>
                      <div class="step-card">
                          <div class="step-number">3</div>
-                         <h3>Deployment & Growth</h3>
-                         <p>We launch your first agent and monitor its impact. We gather performance data to optimize and scale automation to other areas of your business.</p>
+                         <h3>Deployment & Optimization</h3>
+                         <p>We deploy your agent and provide ongoing support and optimization to ensure it delivers maximum value and adapts to your needs.</p>
                      </div>
                  </div>
             </div>
@@ -590,10 +585,10 @@
 
         <section id="contact">
             <div class="container">
-                <h2>Ready to deploy your first AI agent?</h2>
-                <p class="lead">Let's discuss how an AgentBiz agent can transform your operations. Fill out the form below to schedule a free demo, and we will show you the true potential for your specific business case.</p>
+                <h2>Let's Build Your <span>AI-Powered Future</span></h2>
+                <p class="lead">Ready to see how an AI agent can transform your business? Fill out the form to schedule a complimentary strategy session with one of our AI experts.</p>
                 
-                <form class="contact-form" action="https://formspree.io/f/xblyvyyr" method="POST">
+                <form class="contact-form" action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST">
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" required>
@@ -607,10 +602,10 @@
                         <input type="text" id="company" name="company">
                     </div>
                     <div class="form-group">
-                        <label for="message">How can we help you?</label>
+                        <label for="message">What business challenge can we help you solve?</label>
                         <textarea id="message" name="message" required></textarea>
                     </div>
-                    <button type="submit" class="cta-button">Send Message</button>
+                    <button type="submit" class="cta-button">Submit Request</button>
                 </form>
             </div>
         </section>
@@ -621,16 +616,15 @@
             <div class="footer-grid">
                 <div class="footer-about">
                     <h3>Agent<span>Biz</span></h3>
-                    <p>Autonomous AI agents for your business. We help you automate complexity and accelerate growth.</p>
+                    <p>Your strategic partner in AI transformation. We automate complexity and accelerate growth.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Sitemap</h4>
                     <ul>
                         <li><a href="#hero">Home</a></li>
-                        <li><a href="#solution">Solution</a></li>
-                        <li><a href="#how-it-works">Process</a></li>
-                        <li><a href="#tech-stack">Technology</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#challenges">Challenges</a></li>
+                        <li><a href="#solutions">Solutions</a></li>
+                        <li><a href="#process">Process</a></li>
                     </ul>
                 </div>
                 <div class="footer-social">
