@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgentBiz - Strategic AI Agents for Business Transformation</title>
-    <meta name="description" content="AgentBiz designs and deploys custom AI agents to automate your critical business processes, unlock data insights, and drive operational efficiency.">
+    <title>AgentBiz - Agentes de IA Estratégicos para Transformar tu Negocio</title>
+    <meta name="description" content="AgentBiz diseña e implementa agentes de IA a medida para automatizar procesos críticos, desbloquear insights de datos e impulsar la eficiencia operativa.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +52,8 @@
         }
 
         section {
-            padding: 100px 0;
+            padding: 120px 0;
+            border-bottom: 1px solid var(--border-color);
         }
         
         h1, h2, h3, h4 {
@@ -61,408 +62,108 @@
             letter-spacing: -1px;
         }
         
-        h1 {
-            font-size: 3.8rem;
-        }
-
-        h2 {
-            font-size: 2.8rem;
-            text-align: center;
-            margin-bottom: 70px;
-        }
+        h1 { font-size: 3.8rem; }
+        h2 { font-size: 2.8rem; text-align: center; margin-bottom: 70px; }
+        h3 { font-size: 2.2rem; margin-bottom: 30px; }
+        h4 { font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; color: var(--secondary-text); }
         
-        h1 span, h2 span {
+        h1 span, h2 span, h3 span {
             background: var(--accent-gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
-        p {
-            margin-bottom: 20px;
-            font-weight: 400;
-            color: var(--secondary-text);
-        }
+        p { margin-bottom: 20px; font-weight: 400; color: var(--secondary-text); }
+        .lead { font-size: 1.25rem; color: #D2D2D7; max-width: 800px; margin-left: auto; margin-right: auto;}
         
-        .lead {
-            font-size: 1.25rem;
-            color: #D2D2D7;
-        }
-
-        /* --- HEADER (Static) --- */
-        .header {
-            padding: 20px 0;
-            background-color: #000000;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--light-text);
-            text-decoration: none;
-            letter-spacing: -1px;
-        }
-        
-        .logo span {
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 800;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 35px;
-        }
-
-        .nav-links a {
-            color: var(--secondary-text);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--light-text);
-        }
-        
-        /* --- GENERAL BUTTON STYLE --- */
         .cta-button {
-            background: var(--accent-gradient);
-            color: #FFFFFF;
-            padding: 16px 36px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: var(--accent-gradient); color: #FFFFFF; padding: 16px 36px; border: none;
+            border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; text-decoration: none;
+            display: inline-block; transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
         .cta-button:hover {
             transform: translateY(-3px) scale(1.03);
             box-shadow: 0 10px 25px rgba(138, 43, 226, 0.2);
         }
 
+        /* --- HEADER --- */
+        .header {
+            padding: 20px 0; background-color: rgba(0,0,0,0.8); border-bottom: 1px solid var(--border-color);
+            position: fixed; width: 100%; z-index: 1000; backdrop-filter: blur(12px);
+        }
+        .header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: 800; color: var(--light-text); text-decoration: none; letter-spacing: -1px; }
+        .logo span { background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800; }
+        .nav-links { display: flex; align-items: center; list-style: none; }
+        .nav-links li { margin-left: 35px; }
+        .nav-links a { color: var(--secondary-text); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.3s ease; padding: 5px 0; border-bottom: 2px solid transparent; }
+        .nav-links a:hover { color: var(--light-text); }
+        .nav-links a.active { color: var(--light-text); border-bottom: 2px solid var(--primary-accent-start); }
+
         /* --- HERO SECTION --- */
-        #hero {
-            padding-top: 100px;
-            padding-bottom: 100px;
-            text-align: center;
-        }
+        #hero { padding-top: 200px; padding-bottom: 150px; text-align: center; }
+        #hero .container { max-width: 900px; }
+        #hero h1 { margin-bottom: 25px; }
+        #hero .lead { margin-bottom: 30px; }
         
-        #hero .container {
-            max-width: 900px;
-        }
-        
-        #hero h1 {
-            margin-bottom: 25px;
-        }
-        
-        #hero .lead {
-            margin-bottom: 30px;
-        }
-        
-        /* --- CHALLENGES SECTION (Inspired by Koombea's "We solve") --- */
-        #challenges {
-            background-color: var(--card-bg);
-        }
-
-        .challenges-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-
-        .challenge-card {
-            background-color: #0A0A0A;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-
-        .challenge-card .icon {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--primary-accent-start);
-        }
-
-        .challenge-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        /* --- SOLUTION SECTION --- */
-        .solution-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .solution-card {
-            background-color: var(--card-bg);
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
+        /* --- SOLUTIONS HUB SECTION --- */
+        .solutions-hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .solution-hub-card {
+            background: var(--card-bg); padding: 30px; border-radius: 12px; border: 1px solid var(--border-color);
+            text-decoration: none; color: var(--light-text); display: flex; flex-direction: column;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .solution-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--accent-gradient);
-        }
-        
-        .solution-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-        
-        .solution-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--light-text);
-        }
-        
-        /* --- PROCESS SECTION --- */
-        #process {
-            background-color: var(--card-bg);
-        }
-        
-        .process-grid {
-             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            text-align: center;
-        }
-        
-        .step-card .step-number {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: var(--accent-gradient);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            color: #FFFFFF;
-        }
-        
-        .step-card h3 {
-            color: var(--light-text);
-            margin-bottom: 10px;
-        }
-        
-        /* --- TECHNOLOGY CAROUSEL SECTION --- */
-        #tech-stack {
-            padding: 80px 0;
+        .solution-hub-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
+        .solution-hub-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+        .solution-hub-card p { flex-grow: 1; }
+        .solution-hub-card .learn-more {
+            font-weight: 600; margin-top: 20px; display: inline-block;
+            background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; color: transparent;
         }
 
-        .tech-stack-container h2 {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: #888;
-            text-align: center;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+        /* --- SERVICE DETAIL LAYOUT --- */
+        .service-detail-layout { display: grid; grid-template-columns: 280px 1fr; gap: 80px; }
+        .service-nav { position: sticky; top: 120px; align-self: start; }
+        .service-nav ul { list-style: none; }
+        .service-nav ul li a {
+            display: block; padding: 12px 15px; margin-bottom: 8px; border-radius: 8px;
+            text-decoration: none; color: var(--secondary-text); font-weight: 500;
+            transition: background-color 0.3s, color 0.3s;
         }
+        .service-nav ul li a:hover { background-color: var(--card-bg); color: var(--light-text); }
+        .service-nav ul li a.active { background-color: var(--card-bg); color: var(--light-text); font-weight: 600; }
+        
+        .service-content-section { padding-top: 20px; margin-bottom: 80px; }
+        .service-content ul { list-style: none; padding-left: 0; }
+        .service-content ul li {
+            position: relative; padding-left: 30px; margin-bottom: 15px; font-size: 1.1rem;
+        }
+        .service-content ul li::before {
+            content: '✓'; font-weight: 600; position: absolute; left: 0; top: 0;
+            background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; color: transparent;
+        }
+        .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .plan-card {
+            background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px;
+            padding: 30px; text-align: center;
+        }
+        .plan-card h4 { text-transform: none; letter-spacing: -0.5px; font-size: 1.3rem; margin-bottom: 15px; color: var(--light-text); }
+        .plan-card .price { font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; }
+        .plan-card .price span { font-size: 1rem; color: var(--secondary-text); font-weight: 400; }
+        .plan-card .cta-button { width: 100%; }
 
-        .scroller {
-            overflow: hidden;
-            -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-            mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-        }
-
-        .scroller-inner {
-            display: flex;
-            gap: 60px;
-            width: max-content;
-            animation: scroll 30s linear infinite;
-        }
-        
-        .scroller-inner svg {
-            height: 40px;
-            fill: #888;
-            transition: fill 0.3s ease;
-        }
-        
-        .scroller-inner svg:hover {
-            fill: var(--light-text);
-        }
-
-        @keyframes scroll {
-            to {
-                transform: translateX(calc(-50% - 30px));
-            }
-        }
-        
-        /* --- CONTACT FORM SECTION --- */
-        #contact {
-            text-align: center;
-        }
-        
-        #contact .container {
-            max-width: 800px;
-        }
-        
-        .contact-form {
-            display: grid;
-            gap: 20px;
-            text-align: left;
-            margin-top: 50px;
-        }
-        
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group label {
-            margin-bottom: 8px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            color: var(--secondary-text);
-        }
-        
-        .form-group input, .form-group textarea {
-            background-color: #0A0A0A;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 14px;
-            color: var(--light-text);
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-accent-start);
-            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            padding: 60px 0;
-            background-color: #050505;
-            border-top: 1px solid var(--border-color);
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 50px;
-        }
-        
-        .footer-about h3 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 15px;
-        }
-
-        .footer-about h3 span {
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 800;
-        }
-        
-        .footer-links h4, .footer-social h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--light-text);
-        }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: var(--secondary-text);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary-accent-end);
-        }
-        
-        .social-icons a {
-            color: var(--secondary-text);
-            font-size: 1.5rem;
-            margin-right: 20px;
-            transition: color 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            color: var(--primary-accent-end);
-        }
-        
-        .footer-copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid var(--border-color);
-            color: #888;
-        }
-
-        /* --- RESPONSIVE --- */
+        /* --- RESPONSIVE ADJUSTMENTS --- */
         @media(max-width: 992px) {
-            .hero-content, .challenges-grid, .solution-grid, .footer-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero-text, .footer-about, .footer-links, .footer-social {
-                text-align: center;
-            }
+            .service-detail-layout { grid-template-columns: 1fr; }
+            .service-nav { position: static; margin-bottom: 40px; }
+            .service-nav ul { display: flex; flex-wrap: wrap; gap: 10px; }
         }
-        
         @media(max-width: 768px) {
             h1 { font-size: 2.8rem; letter-spacing: -1px;}
             h2 { font-size: 2.2rem; }
-            .nav-links {
-                display: none;
-            }
-            .process-grid {
-                grid-template-columns: 1fr;
-            }
+            .header { padding: 15px 0; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -473,162 +174,194 @@
             <a href="#hero" class="logo">Agent<span>Biz</span></a>
             <nav class="nav-links">
                 <ul>
-                    <li><a href="#challenges">Challenges</a></li>
-                    <li><a href="#solutions">Solutions</a></li>
-                    <li><a href="#process">Our Process</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#solutions">Soluciones</a></li>
+                    <li><a href="#discovery-service">Discovery</a></li>
+                    <li><a href="#development-service">Development</a></li>
+                    <li><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
-            <a href="#contact" class="cta-button">Talk to an Expert</a>
+            <a href="#contact" class="cta-button">Hablar con un Experto</a>
         </div>
     </header>
 
     <main>
         <section id="hero">
             <div class="container">
-                <h1>Unlock Business Efficiency and <span>Drive ROI with Custom AI Agents</span></h1>
+                <h1>Transforma tu Operación. <span>Maximiza tu ROI con Agentes de IA Estratégicos.</span></h1>
                 <p class="lead">
-                   We are a strategic partner in AI transformation. AgentBiz designs, builds, and deploys intelligent agents that automate your most critical processes, delivering measurable results from day one.
+                   Somos tu socio estratégico en la adopción de IA. Diseñamos y desplegamos agentes de inteligencia artificial a medida que automatizan tus procesos críticos, extraen valor de tus datos y generan una eficiencia operativa sin precedentes.
                 </p>
-                <a href="#contact" class="cta-button">Book a Strategy Call</a>
-            </div>
-        </section>
-        
-        <section id="challenges">
-            <div class="container">
-                <h2>We Solve Your Most Critical Business Challenges</h2>
-                <div class="challenges-grid">
-                    <div class="challenge-card">
-                        <div class="icon"><i class="fas fa-hourglass-half"></i></div>
-                        <h3>Inefficient Manual Processes</h3>
-                        <p>Your team spends valuable time on repetitive, manual tasks that are prone to human error and slow down your operations.</p>
-                    </div>
-                    <div class="challenge-card">
-                        <div class="icon"><i class="fas fa-cubes"></i></div>
-                        <h3>Isolated Data Silos</h3>
-                        <p>Critical information is trapped in different systems (CRM, ERP, documents), making it impossible to get a unified view for decision-making.</p>
-                    </div>
-                    <div class="challenge-card">
-                        <div class="icon"><i class="fas fa-users-cog"></i></div>
-                        <h3>Poor Customer Experience</h3>
-                        <p>Support teams are overwhelmed, leading to slow response times and a frustrating experience for your customers.</p>
-                    </div>
-                    <div class="challenge-card">
-                        <div class="icon"><i class="fas fa-chart-bar"></i></div>
-                        <h3>Lack of Actionable Insights</h3>
-                        <p>You have plenty of data, but lack the tools to analyze it effectively and extract the insights needed for strategic growth.</p>
-                    </div>
-                </div>
+                <a href="#solutions" class="cta-button">Descubre Nuestras Soluciones</a>
             </div>
         </section>
 
         <section id="solutions">
             <div class="container">
-                <h2>Our AI Agent Solutions</h2>
-                <div class="solution-grid">
-                    <div class="solution-card">
-                        <h3>Business Intelligence Agents</h3>
-                        <p>Connects to your databases and analytics tools to answer complex data questions in natural language, create reports, and identify trends autonomously.</p>
-                    </div>
-                    <div class="solution-card">
-                        <h3>Process Automation Agents</h3>
-                        <p>Automates end-to-end workflows like invoice processing, lead qualification, or inventory management, integrating with your existing software.</p>
-                    </div>
-                    <div class="solution-card">
-                        <h3>Customer Support Agents</h3>
-                        <p>Provides instant, accurate support by accessing your knowledge base, handling routine queries, and escalating complex issues to human agents seamlessly.</p>
+                <h2>Soluciones de IA para cada etapa de tu <span>Transformación</span></h2>
+                <div class="solutions-hub-grid">
+                    <a href="#discovery-service" class="solution-hub-card">
+                        <h3>AI Discovery & Strategy</h3>
+                        <p>Analizamos tus procesos y datos para crear una hoja de ruta de IA clara y con un ROI definido. Ideal si no sabes por dónde empezar.</p>
+                        <span class="learn-more">Saber Más →</span>
+                    </a>
+                    <a href="#development-service" class="solution-hub-card">
+                        <h3>Custom Agent Development</h3>
+                        <p>Diseñamos, construimos y desplegamos agentes de IA a medida que se integran perfectamente con tus sistemas y resuelven tus retos más complejos.</p>
+                        <span class="learn-more">Saber Más →</span>
+                    </a>
+                    <div class="solution-hub-card"> <h3>Agent Management & Optimization</h3>
+                        <p>Ofrecemos soporte, monitoreo y optimización continua para asegurar que tus agentes operen con máxima eficiencia y evolucionen con tu negocio.</p>
+                        <span class="learn-more">Próximamente</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="process">
+        <section id="discovery-service">
             <div class="container">
-                 <h2>Our Proven Path to <span>AI-Powered Transformation</span></h2>
-                 <div class="process-grid">
-                     <div class="step-card">
-                         <div class="step-number">1</div>
-                         <h3>Strategy & Discovery</h3>
-                         <p>We partner with you to identify high-impact automation opportunities and design a custom AI roadmap aligned with your business goals.</p>
-                     </div>
-                     <div class="step-card">
-                         <div class="step-number">2</div>
-                         <h3>Agile Development & Integration</h3>
-                         <p>Our expert team builds your AI agent using an agile methodology, ensuring full integration with your systems and continuous feedback.</p>
-                     </div>
-                     <div class="step-card">
-                         <div class="step-number">3</div>
-                         <h3>Deployment & Optimization</h3>
-                         <p>We deploy your agent and provide ongoing support and optimization to ensure it delivers maximum value and adapts to your needs.</p>
-                     </div>
-                 </div>
+                <div class="service-detail-layout">
+                    <aside class="service-nav">
+                         <ul>
+                            <li><a href="#discovery-what" class="active">Qué es</a></li>
+                            <li><a href="#discovery-challenges">Retos que Resolvemos</a></li>
+                            <li><a href="#discovery-deliverables">Entregables</a></li>
+                            <li><a href="#discovery-process">Nuestro Proceso</a></li>
+                            <li><a href="#discovery-plan">Plan y Precio</a></li>
+                        </ul>
+                    </aside>
+                    <div class="service-content">
+                        <div id="discovery-what" class="service-content-section">
+                            <h3>AI Discovery & <span>Strategy Session</span></h3>
+                            <p class="lead">Obtén una hoja de ruta clara y estratégica para la adopción de IA en tu empresa, identificando los casos de uso con mayor potencial de ROI.</p>
+                            <p>Es un servicio de consultoría intensivo donde nuestros expertos se sumergen en tus procesos. El objetivo es eliminar la incertidumbre y proporcionarte un plan de acción concreto y priorizado para empezar a usar agentes de IA de forma efectiva.</p>
+                        </div>
+                        <div id="discovery-challenges" class="service-content-section">
+                            <h4>Retos de Negocio que Resolvemos</h4>
+                            <ul>
+                                <li>Incertidumbre sobre el ROI de la inversión en IA.</li>
+                                <li>Falta de conocimiento técnico interno para evaluar oportunidades.</li>
+                                <li>Procesos operativos ineficientes pero no claramente identificados.</li>
+                                <li>Miedo a invertir en un proyecto de IA sin un caso de negocio sólido.</li>
+                            </ul>
+                        </div>
+                        <div id="discovery-deliverables" class="service-content-section">
+                            <h4>Entregables Clave</h4>
+                            <ul>
+                                <li><strong>Informe de Oportunidades de IA:</strong> Documento que identifica y califica de 1 a 3 casos de uso con el mayor potencial.</li>
+                                <li><strong>Mapa de Proceso y Arquitectura:</strong> Diagrama que muestra cómo un agente de IA se integraría en tu flujo actual.</li>
+                                <li><strong>Proyección de ROI y Costos:</strong> Estimación de la inversión requerida y el retorno esperado.</li>
+                                <li><strong>Hoja de Ruta Estratégica:</strong> Plan de proyecto recomendado con fases, cronogramas y próximos pasos.</li>
+                            </ul>
+                        </div>
+                         <div id="discovery-process" class="service-content-section">
+                            <h4>Nuestro Proceso de Descubrimiento</h4>
+                            <p>Un proceso ágil de una semana para darte la máxima claridad en el menor tiempo posible.</p>
+                        </div>
+                        <div id="discovery-plan" class="service-content-section">
+                            <h4>Plan y Precio</h4>
+                            <div class="plans-grid">
+                                <div class="plan-card">
+                                    <h4>AI Discovery & Strategy</h4>
+                                    <p class="price">$2,500 <span>USD</span></p>
+                                    <p>Un paquete de precio fijo para un análisis completo y una hoja de ruta estratégica.</p>
+                                    <a href="#contact" class="cta-button">Iniciar mi Descubrimiento</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="development-service" style="background-color: var(--card-bg);">
+            <div class="container">
+                <div class="service-detail-layout">
+                    <aside class="service-nav">
+                        <ul>
+                            <li><a href="#dev-what">Qué es</a></li>
+                            <li><a href="#dev-results">Resultados</a></li>
+                            <li><a href="#dev-deliverables">Entregables</a></li>
+                            <li><a href="#dev-plans">Modelos de Colaboración</a></li>
+                        </ul>
+                    </aside>
+                    <div class="service-content">
+                        <div id="dev-what" class="service-content-section">
+                            <h3>Custom Agent <span>Development</span></h3>
+                            <p class="lead">Construimos agentes de IA robustos, escalables y a medida que se convierten en los empleados más eficientes de tu equipo.</p>
+                            <p>Es nuestro servicio integral de ingeniería donde nuestro equipo de expertos diseña, desarrolla, prueba y despliega un agente completamente funcional y listo para producción, encargándonos de todo el ciclo de vida del desarrollo.</p>
+                        </div>
+                        <div id="dev-results" class="service-content-section">
+                            <h4>Resultados de Negocio que Impulsamos</h4>
+                            <ul>
+                                <li>Reducción drástica en el tiempo dedicado a tareas manuales y repetitivas.</li>
+                                <li>Aumento de la precisión y eliminación de errores humanos costosos.</li>
+                                <li>Acceso instantáneo a insights de negocio desde datos complejos.</li>
+                                <li>Liberación del talento de tu equipo para que se enfoque en tareas estratégicas.</li>
+                            </ul>
+                        </div>
+                        <div id="dev-deliverables" class="service-content-section">
+                            <h4>Entregables Clave</h4>
+                             <ul>
+                                <li><strong>Agente de IA Funcional:</strong> Un agente de software desplegado y operativo.</li>
+                                <li><strong>Integración con Sistemas Clave:</strong> Conexión fluida con tu CRM, ERP, bases de datos, etc.</li>
+                                <li><strong>Documentación Completa:</strong> Guías técnicas y de usuario para la gestión del agente.</li>
+                                <li><strong>Sesión de Capacitación:</strong> Entrenamiento para tu equipo sobre cómo interactuar con el nuevo agente.</li>
+                            </ul>
+                        </div>
+                        <div id="dev-plans" class="service-content-section">
+                            <h4>Modelos de Colaboración</h4>
+                            <div class="plans-grid">
+                                <div class="plan-card">
+                                    <h4>Proyecto Piloto (PoC)</h4>
+                                    <p>Ideal para probar un caso de uso específico con un alcance limitado. Duración: 4-6 Semanas.</p>
+                                    <a href="#contact" class="cta-button">Cotizar un Piloto</a>
+                                </div>
+                                <div class="plan-card">
+                                    <h4>Desarrollo a Escala</h4>
+                                    <p>Para construir una solución robusta y completa para un proceso de negocio crítico. Duración: 3-6 Meses.</p>
+                                    <a href="#contact" class="cta-button">Hablar con un Arquitecto</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         
-        <section id="tech-stack">
-            <div class="tech-stack-container">
-                <h2>BUILT WITH A WORLD-CLASS STACK</h2>
-                <div class="scroller">
-                    <div class="scroller-inner">
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>OpenAI</title><path d="M22.2819 12.8526C22.2819 12.0293 22.4333 11.206 22.7362 10.3827L23.9999 8.33642L24 8.33641L20.2558 7.31334L19.0118 9.33994C18.5042 8.99513 17.9157 8.75259 17.2252 8.63132L17.5898 3.56847L14.072 2.4541L13.7074 7.51695C13.0169 7.39568 12.3365 7.31334 11.6051 7.31334C10.8128 7.31334 10.0814 7.39568 9.42058 7.51695L9.05592 2.4541L5.53814 3.56847L5.90279 8.63132C5.21229 8.75259 4.62383 8.99513 4.11621 9.33994L2.87221 7.31334L0 8.33641L1.24399 10.3827C1.54694 11.206 1.71808 12.0293 1.71808 12.8526C1.71808 13.6759 1.56665 14.5189 1.2637 15.3422L0.0197068 17.3885L3.76391 18.4116L4.98819 16.385C5.49581 16.7298 6.08427 16.9723 6.77477 17.0936L6.41011 22.1565L9.9279 23.2709L10.2925 18.208C10.983 18.3293 11.6635 18.4116 12.3949 18.4116C13.1263 18.4116 13.8473 18.3293 14.5378 18.208L14.9025 23.2709L18.4203 22.1565L18.0556 17.0936C18.7461 16.9723 19.3346 16.7298 19.8422 16.385L21.1059 18.4116L24 17.3885L22.756 15.3422C22.4531 14.5189 22.2819 13.6759 22.2819 12.8526ZM12.3949 16.4883C10.1628 16.4883 8.34966 14.8504 8.34966 12.8526C8.34966 10.8548 10.1628 9.21695 12.3949 9.21695C14.627 9.21695 16.4402 10.8548 16.4402 12.8526C16.4402 14.8504 14.627 16.4883 12.3949 16.4883Z"/></svg>
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Anthropic</title><path d="M22.611 22.7512H1.389V1.2488H22.611V22.7512ZM4.4442 19.6959H19.5558V4.3041H4.4442V19.6959ZM9.1107 15.8624H12.7218V8.1376H9.1107V15.8624Z"/></svg>
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Nvidia</title><path d="M15.42 24V0h5.367v10.334h.14L24 3.737V0h-6.242l-4.912 8.33h-.14V0H7.334v24h5.37V13.666h-.14L9.408 20.263V24h6.241l4.905-8.33h.14V24zM0 10.334V3.738h3.376v13.056H0v-6.46z"/></svg>
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gemini</title><path d="M12.758 9.923L9.922 15.61l-2.836-5.687H2.91l5.447 10.923.04.079.04-.079 5.448-10.923zM21.09 3.164l-5.448 10.923-.04.079-.04-.079L10.115 3.164h4.17l1.564 3.136 1.563-3.136z"/></svg>
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>OpenAI</title><path d="M22.2819 12.8526C22.2819 12.0293 22.4333 11.206 22.7362 10.3827L23.9999 8.33642L24 8.33641L20.2558 7.31334L19.0118 9.33994C18.5042 8.99513 17.9157 8.75259 17.2252 8.63132L17.5898 3.56847L14.072 2.4541L13.7074 7.51695C13.0169 7.39568 12.3365 7.31334 11.6051 7.31334C10.8128 7.31334 10.0814 7.39568 9.42058 7.51695L9.05592 2.4541L5.53814 3.56847L5.90279 8.63132C5.21229 8.75259 4.62383 8.99513 4.11621 9.33994L2.87221 7.31334L0 8.33641L1.24399 10.3827C1.54694 11.206 1.71808 12.0293 1.71808 12.8526C1.71808 13.6759 1.56665 14.5189 1.2637 15.3422L0.0197068 17.3885L3.76391 18.4116L4.98819 16.385C5.49581 16.7298 6.08427 16.9723 6.77477 17.0936L6.41011 22.1565L9.9279 23.2709L10.2925 18.208C10.983 18.3293 11.6635 18.4116 12.3949 18.4116C13.1263 18.4116 13.8473 18.3293 14.5378 18.208L14.9025 23.2709L18.4203 22.1565L18.0556 17.0936C18.7461 16.9723 19.3346 16.7298 19.8422 16.385L21.1059 18.4116L24 17.3885L22.756 15.3422C22.4531 14.5189 22.2819 13.6759 22.2819 12.8526ZM12.3949 16.4883C10.1628 16.4883 8.34966 14.8504 8.34966 12.8526C8.34966 10.8548 10.1628 9.21695 12.3949 9.21695C14.627 9.21695 16.4402 10.8548 16.4402 12.8526C16.4402 14.8504 14.627 16.4883 12.3949 16.4883Z"/></svg>
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Anthropic</title><path d="M22.611 22.7512H1.389V1.2488H22.611V22.7512ZM4.4442 19.6959H19.5558V4.3041H4.4442V19.6959ZM9.1107 15.8624H12.7218V8.1376H9.1107V15.8624Z"/></svg>
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Nvidia</title><path d="M15.42 24V0h5.367v10.334h.14L24 3.737V0h-6.242l-4.912 8.33h-.14V0H7.334v24h5.37V13.666h-.14L9.408 20.263V24h6.241l4.905-8.33h.14V24zM0 10.334V3.738h3.376v13.056H0v-6.46z"/></svg>
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gemini</title><path d="M12.758 9.923L9.922 15.61l-2.836-5.687H2.91l5.447 10.923.04.079.04-.079 5.448-10.923zM21.09 3.164l-5.448 10.923-.04.079-.04-.079L10.115 3.164h4.17l1.564 3.136 1.563-3.136z"/></svg>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="contact">
             <div class="container">
-                <h2>Let's Build Your <span>AI-Powered Future</span></h2>
-                <p class="lead">Ready to see how an AI agent can transform your business? Fill out the form to schedule a complimentary strategy session with one of our AI experts.</p>
-                
+                <h2>Hablemos de tu <span>Próximo Agente de IA</span></h2>
+                <p class="lead">¿Listo para transformar tu negocio? Completa el formulario para agendar una sesión estratégica con nuestros expertos en IA.</p>
                 <form class="contact-form" action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Work Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="company">Company</label>
-                        <input type="text" id="company" name="company">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">What business challenge can we help you solve?</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="cta-button">Submit Request</button>
+                    <div class="form-group"><label for="name">Nombre Completo</label><input type="text" id="name" name="name" required></div>
+                    <div class="form-group"><label for="email">Email de Trabajo</label><input type="email" id="email" name="email" required></div>
+                    <div class="form-group"><label for="company">Empresa</label><input type="text" id="company" name="company"></div>
+                    <div class="form-group"><label for="message">¿Qué reto de negocio podemos ayudarte a resolver?</label><textarea id="message" name="message" required></textarea></div>
+                    <button type="submit" class="cta-button">Enviar Solicitud</button>
                 </form>
             </div>
         </section>
+
     </main>
     
-    <footer>
+    <footer id="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
                     <h3>Agent<span>Biz</span></h3>
-                    <p>Your strategic partner in AI transformation. We automate complexity and accelerate growth.</p>
+                    <p>Tu socio estratégico en transformación de IA. Automatizamos la complejidad y aceleramos el crecimiento.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Sitemap</h4>
+                    <h4>Mapa del Sitio</h4>
                     <ul>
                         <li><a href="#hero">Home</a></li>
-                        <li><a href="#challenges">Challenges</a></li>
-                        <li><a href="#solutions">Solutions</a></li>
-                        <li><a href="#process">Process</a></li>
+                        <li><a href="#solutions">Soluciones</a></li>
+                        <li><a href="#discovery-service">AI Discovery</a></li>
+                        <li><a href="#development-service">Custom Development</a></li>
                     </ul>
                 </div>
                 <div class="footer-social">
-                    <h4>Connect</h4>
+                    <h4>Conecta</h4>
                     <div class="social-icons">
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="#" aria-label="X (formerly Twitter)"><i class="fab fa-twitter"></i></a>
@@ -636,10 +369,57 @@
                 </div>
             </div>
             <div class="footer-copyright">
-                <p>&copy; 2025 AgentBiz. All rights reserved.</p>
+                <p>&copy; 2025 AgentBiz. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
+    
+    <script>
+        // Script for active nav highlighting on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.service-content-section');
+            const navLinks = document.querySelectorAll('.service-nav a');
 
+            if(!sections.length || !navLinks.length) return;
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '-40% 0px -60% 0px' });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Script for main header active state
+            const mainSections = document.querySelectorAll('main > section');
+            const mainNavLinks = document.querySelectorAll('.header .nav-links a');
+            
+            const mainObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting){
+                         mainNavLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if(link.getAttribute('href').substring(1) === entry.target.id){
+                                link.classList.add('active');
+                            }
+                         });
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            mainSections.forEach(section => {
+                mainObserver.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
