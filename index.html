@@ -3,52 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>AgentBiz - Strategic AI Agents for Business Transformation</title>
-    <meta name="description" content="AgentBiz designs and deploys custom AI agents to automate critical business processes, unlock data insights, and drive operational efficiency.">
-    <link rel="canonical" href="https://www.agentbiz.ai/">
-
-    <meta property="og:title" content="AgentBiz - Strategic AI Agents for Business Transformation">
-    <meta property="og:description" content="We design, build, and deploy custom AI agents to automate processes and accelerate business growth.">
-    <meta property="og:image" content="https://www.agentbiz.ai/share-image.jpg"> <meta property="og:url" content="https://www.agentbiz.ai/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="AgentBiz">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AgentBiz - Strategic AI Agents for Business Transformation">
-    <meta name="twitter:description" content="We design, build, and deploy custom AI agents to automate processes and accelerate business growth.">
-    <meta name="twitter:image" content="https://www.agentbiz.ai/share-image.jpg"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="description" content="AgentBiz designs and deploys custom AI agents to automate your critical business processes, unlock data insights, and drive operational efficiency.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "AgentBiz",
-      "url": "https://www.agentbiz.ai/",
-      "logo": "https://www.agentbiz.ai/logo.png", // Reemplaza con tu logo
-      "description": "Strategic AI agent development for business process automation and operational efficiency.",
-      "email": "hello@agentbiz.ai",
-      // "telephone": "+1234567890", // Opcional: añade tu teléfono
-      // "address": { // Opcional: añade tu dirección
-      //   "@type": "PostalAddress",
-      //   "streetAddress": "Street Name 123",
-      //   "addressLocality": "City",
-      //   "postalCode": "12345",
-      //   "addressCountry": "CO"
-      // },
-      "sameAs": [
-        // "https://www.linkedin.com/company/agentbiz", // Reemplaza con tus redes
-        // "https://twitter.com/agentbiz"
-      ]
-    }
-    </script>
-
     <style>
-        /* CSS se mantiene igual que en la versión anterior */
         :root {
             --dark-bg: #000000; --light-text: #F5F5F7; --secondary-text: #A1A1A6;
             --primary-accent-start: #007BFF; --primary-accent-end: #8A2BE2;
@@ -76,6 +40,8 @@
             display: inline-block; transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .cta-button:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 10px 25px rgba(138, 43, 226, 0.2); }
+
+        /* --- HEADER --- */
         .header {
             padding: 20px 0; background-color: rgba(0,0,0,0.8); border-bottom: 1px solid var(--border-color);
             position: fixed; width: 100%; z-index: 1000; backdrop-filter: blur(12px);
@@ -88,10 +54,14 @@
         .main-nav a:hover { color: var(--light-text); }
         .header-cta { background: var(--accent-gradient); color: #FFFFFF; padding: 10px 22px; border: none; border-radius: 8px; font-weight: 500; font-size: 0.95rem; cursor: pointer; text-decoration: none; transition: transform 0.3s ease; }
         .header-cta:hover { transform: scale(1.05); }
+
+        /* --- HERO SECTION --- */
         #hero { padding-top: 200px; padding-bottom: 150px; text-align: center; }
         #hero .container { max-width: 900px; }
         #hero h1 { margin-bottom: 25px; }
         #hero .lead { margin-bottom: 30px; }
+        
+        /* --- SOLUTIONS GRID SECTION --- */
         .solutions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         .solution-card {
             background-color: var(--card-bg); padding: 30px 35px; border-radius: 12px;
@@ -104,43 +74,42 @@
         .solution-card ul { list-style: none; padding-left: 0; }
         .solution-card ul li { position: relative; padding-left: 20px; margin-bottom: 8px; font-size: 0.95rem; }
         .solution-card ul li::before { content: '•'; position: absolute; left: 0; color: var(--primary-accent-start); }
+
+        /* --- AI WORKFLOW SECTION (REBUILT) --- */
         #workflow { background-color: var(--card-bg); }
-        .workflow-container { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); }
-        .workflow-container::before {
-            content: ''; position: absolute; top: 50px; left: 10%; width: 80%; height: 2px;
-            background-image: linear-gradient(to right, var(--secondary-text) 50%, transparent 50%);
-            background-size: 20px 2px; background-repeat: repeat-x;
+        .workflow-timeline {
+            display: grid; grid-template-columns: repeat(5, 1fr); align-items: center;
+            position: relative; padding: 40px 0;
         }
-        .workflow-step { position: relative; display: flex; flex-direction: column; align-items: center; }
-        .workflow-step::after {
-            content: ''; position: absolute; width: 2px; height: 50px;
-            background-image: linear-gradient(to bottom, var(--secondary-text) 50%, transparent 50%);
-            background-size: 2px 20px; left: 50%; transform: translateX(-50%);
+        .workflow-timeline::before { /* Horizontal dotted line */
+            content: ''; position: absolute; top: 50%; left: 5%; width: 90%;
+            height: 2px; transform: translateY(-50%);
+            background-image: linear-gradient(to right, var(--secondary-text) 33%, rgba(255,255,255,0) 0%);
+            background-position: bottom; background-size: 15px 2px; background-repeat: repeat-x;
         }
-        .step-content { text-align: center; width: 100%; padding: 0 10px; }
-        .step-content h3 { font-size: 1.2rem; color: var(--light-text); margin-bottom: 8px; }
+        .workflow-step {
+            display: flex; flex-direction: column; align-items: center;
+            gap: 20px; position: relative;
+        }
+        .workflow-step.step-top { flex-direction: column-reverse; }
         .step-icon {
-            width: 100px; height: 100px; border: 2px solid; border-image-slice: 1;
-            border-image-source: var(--accent-gradient); border-radius: 50%; display: flex;
-            align-items: center; justify-content: center; font-size: 2.5rem; background-color: var(--card-bg);
-            z-index: 2;
+            width: 90px; height: 90px; border-radius: 20px;
+            border: 2px solid; border-image-slice: 1; border-image-source: var(--accent-gradient);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2.2rem; background-color: var(--card-bg); z-index: 2;
         }
         .step-icon i { background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .workflow-step.step-top { flex-direction: column-reverse; }
-        .workflow-step.step-top::after { top: 100px; }
-        .workflow-step.step-bottom::after { bottom: 100px; }
-        .workflow-step.step-top .step-content { margin-bottom: 100px; }
-        .workflow-step.step-bottom .step-content { margin-top: 100px; }
-        .audit-process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center; }
-        .audit-step .step-indicator { display: flex; align-items: center; justify-content: center; margin-bottom: 25px; }
-        .audit-step .step-circle {
-            width: 60px; height: 60px; border-radius: 50%; background: var(--accent-gradient);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem; font-weight: 700; color: #FFFFFF;
+        .step-content { text-align: center; }
+        .step-content h3 { font-size: 1.2rem; color: var(--light-text); margin-bottom: 8px; }
+        .step-content p { font-size: 0.9rem; line-height: 1.5; }
+        .workflow-step::after { /* Vertical connector */
+            content: ''; position: absolute; left: 50%; width: 2px; height: 40px;
+            background-color: var(--secondary-text); z-index: 1;
         }
-        .audit-step .step-arrow { color: var(--secondary-text); font-size: 1.5rem; flex-grow: 1; text-align: center; }
-        .audit-step:last-child .step-arrow { display: none; }
-        .audit-step h3 { font-size: 1.3rem; color: var(--light-text); }
+        .workflow-step.step-top::after { top: 50%; }
+        .workflow-step.step-bottom::after { bottom: 50%; }
+
+        /* --- CONTACT FORM --- */
         #contact { text-align: center; }
         #contact .container { max-width: 800px; }
         .contact-form { margin-top: 50px; text-align: left; }
@@ -158,6 +127,8 @@
         .form-group textarea { resize: vertical; min-height: 120px; }
         .form-full-width { grid-column: 1 / -1; }
         .submit-button-wrapper { text-align: center; }
+
+        /* --- FOOTER --- */
         footer { padding: 60px 0; background-color: #050505; border-top: 1px solid var(--border-color); }
         .footer-grid {
             display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px;
@@ -173,20 +144,15 @@
         .footer-social p { margin-bottom: 10px; }
         .social-icons { display: flex; gap: 20px; font-size: 1.5rem; }
         .footer-copyright { text-align: center; padding-top: 30px; border-top: 1px solid var(--border-color); color: #888; font-size: 0.9rem; }
-        @media(max-width: 992px) {
+
+        /* --- RESPONSIVE ADJUSTMENTS --- */
+        @media(max-width: 1024px) {
             .solutions-grid { grid-template-columns: repeat(2, 1fr); }
-            .audit-process-grid { grid-template-columns: 1fr; }
-            .audit-step { margin-bottom: 40px; }
-            .audit-step:last-child { margin-bottom: 0; }
-            .workflow-container { grid-template-columns: 1fr; }
-            .workflow-container::before { display: none; }
-            .workflow-step { flex-direction: row; text-align: left; gap: 20px; margin-bottom: 30px; }
-            .workflow-step::after { display: none; }
-            .workflow-step.step-top, .workflow-step.step-bottom { flex-direction: row; padding: 0;}
-            .step-icon { width: 60px; height: 60px; font-size: 1.5rem; flex-shrink: 0;}
-            .step-top .step-content, .step-bottom .step-content { margin: 0; }
-            .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            .social-icons { justify-content: center; }
+            .workflow-timeline { display: flex; flex-direction: column; gap: 40px; }
+            .workflow-timeline::before, .workflow-step::after { display: none; }
+            .workflow-step, .workflow-step.step-top, .workflow-step.step-bottom { flex-direction: row; text-align: left; gap: 25px; }
+            .step-icon { width: 70px; height: 70px; font-size: 2rem; flex-shrink: 0; }
+            .step-content { margin: 0; }
         }
         @media(max-width: 768px) {
             h1 { font-size: 2.8rem; letter-spacing: -1px;}
@@ -194,6 +160,8 @@
             .main-nav, .header-cta { display: none; }
             .solutions-grid { grid-template-columns: 1fr; }
             .form-row { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .social-icons { justify-content: center; }
         }
     </style>
 </head>
@@ -203,19 +171,18 @@
         <div class="container">
             <a href="#hero" class="logo">Agent<span>Biz</span></a>
             <nav class="main-nav">
-                <a href="#solutions" aria-label="Our Solutions">Services</a>
-                <a href="#workflow" aria-label="Our Workflow">Workflow</a>
-                <a href="#agent-audit" aria-label="AI Agent Audit Service">Agent Audit</a>
-                <a href="#contact" aria-label="Contact Us">Contact</a>
+                <a href="#solutions">Services</a>
+                <a href="#workflow">Workflow</a>
+                <a href="#contact">Contact</a>
             </nav>
             <a href="#contact" class="header-cta">Talk to an Expert</a>
         </div>
     </header>
 
     <main>
-        <section id="hero" aria-labelledby="hero-title">
+        <section id="hero">
             <div class="container">
-                <h1 id="hero-title">Transform Your Operations. <span>Maximize ROI with Strategic AI Agents.</span></h1>
+                <h1>Transform Your Operations. <span>Maximize ROI with Strategic AI Agents.</span></h1>
                 <p class="lead">
                    We are your strategic partner in AI adoption. We design, build, and deploy custom artificial intelligence agents that automate critical processes, unlock data value, and drive unprecedented operational efficiency.
                 </p>
@@ -223,12 +190,12 @@
             </div>
         </section>
 
-        <section id="solutions" aria-labelledby="solutions-title">
+        <section id="solutions">
             <div class="container">
-                <h2 id="solutions-title">Our AI Services and <span>Solutions</span></h2>
+                <h2>Our AI Services and <span>Solutions</span></h2>
                 <div class="solutions-grid">
                     <div class="solution-card">
-                        <div class="icon" aria-hidden="true"><i class="fas fa-star"></i></div>
+                        <div class="icon"><i class="fas fa-star"></i></div>
                         <h3>AI Strategy & Consultation</h3>
                         <ul>
                             <li>Develop a custom AI roadmap aligned with business goals.</li>
@@ -237,7 +204,7 @@
                         </ul>
                     </div>
                     <div class="solution-card">
-                        <div class="icon" aria-hidden="true"><i class="fas fa-cogs"></i></div>
+                        <div class="icon"><i class="fas fa-cogs"></i></div>
                         <h3>Custom Agent Solutions</h3>
                         <ul>
                             <li>Custom model creation (Generative AI, LLMs).</li>
@@ -246,7 +213,7 @@
                         </ul>
                     </div>
                     <div class="solution-card">
-                        <div class="icon" aria-hidden="true"><i class="fas fa-plug"></i></div>
+                        <div class="icon"><i class="fas fa-plug"></i></div>
                         <h3>AI Integration Services</h3>
                         <ul>
                             <li>Seamlessly integrate AI into existing IT infrastructure.</li>
@@ -255,7 +222,7 @@
                         </ul>
                     </div>
                     <div class="solution-card">
-                        <div class="icon" aria-hidden="true"><i class="fas fa-rocket"></i></div>
+                        <div class="icon"><i class="fas fa-rocket"></i></div>
                         <h3>Agent-Powered Products</h3>
                         <ul>
                             <li>Build AI-first digital products for competitive advantage.</li>
@@ -264,7 +231,7 @@
                         </ul>
                     </div>
                     <div class="solution-card">
-                        <div class="icon" aria-hidden="true"><i class="fas fa-shield-alt"></i></div>
+                        <div class="icon"><i class="fas fa-shield-alt"></i></div>
                         <h3>AI Maintenance & Support</h3>
                         <ul>
                             <li>Continuous monitoring, updates, and optimization.</li>
@@ -273,7 +240,7 @@
                         </ul>
                     </div>
                     <div class="solution-card">
-                        <div class="icon" aria-hidden="true"><i class="fas fa-microscope"></i></div>
+                        <div class="icon"><i class="fas fa-microscope"></i></div>
                         <h3>AI Agent Audit & Fix</h3>
                         <ul>
                             <li>Expert review of your existing AI agents.</li>
@@ -285,40 +252,40 @@
             </div>
         </section>
 
-        <section id="workflow" aria-labelledby="workflow-title">
+        <section id="workflow">
             <div class="container">
-                <h2 id="workflow-title">Our AI-Accelerated <span>Development Workflow</span></h2>
-                <div class="workflow-container">
+                <h2>Our AI-Accelerated <span>Development Workflow</span></h2>
+                <div class="workflow-timeline">
                     <div class="workflow-step step-top">
-                        <div class="step-icon" aria-hidden="true"><i class="fas fa-bullseye"></i></div>
                         <div class="step-content">
                             <h3>Discovery Phase</h3>
                             <p>Aligning business goals with AI agent capabilities.</p>
                         </div>
+                        <div class="step-icon"><i class="fas fa-bullseye"></i></div>
                     </div>
                     <div class="workflow-step step-bottom">
-                        <div class="step-icon" aria-hidden="true"><i class="fas fa-sitemap"></i></div>
+                        <div class="step-icon"><i class="fas fa-sitemap"></i></div>
                         <div class="step-content">
                             <h3>Planning & Architecture</h3>
                             <p>Designing a scalable and secure agent architecture.</p>
                         </div>
                     </div>
                     <div class="workflow-step step-top">
-                        <div class="step-icon" aria-hidden="true"><i class="fas fa-code"></i></div>
+                        <div class="step-icon"><i class="fas fa-code"></i></div>
                         <div class="step-content">
                             <h3>AI-Assisted Development</h3>
                             <p>Using AI tools to accelerate coding and ensure quality.</p>
                         </div>
                     </div>
                     <div class="workflow-step step-bottom">
-                        <div class="step-icon" aria-hidden="true"><i class="fas fa-shield-alt"></i></div>
+                        <div class="step-icon"><i class="fas fa-shield-alt"></i></div>
                         <div class="step-content">
                             <h3>Quality Assurance</h3>
                             <p>AI-powered testing to ensure robust and reliable agents.</p>
                         </div>
                     </div>
                     <div class="workflow-step step-top">
-                        <div class="step-icon" aria-hidden="true"><i class="fas fa-rocket"></i></div>
+                        <div class="step-icon"><i class="fas fa-rocket"></i></div>
                         <div class="step-content">
                             <h3>Delivery & Support</h3>
                             <p>Delivering a robust MVP and providing ongoing optimization.</p>
@@ -327,41 +294,10 @@
                 </div>
             </div>
         </section>
-
-        <section id="agent-audit" aria-labelledby="audit-title">
+        
+        <section id="contact">
             <div class="container">
-                <h2 id="audit-title">How the <span>AI Agent Audit & Fix</span> Works</h2>
-                <div class="audit-process-grid">
-                    <div class="audit-step">
-                        <div class="step-indicator" aria-hidden="true">
-                            <div class="step-circle">01</div>
-                            <div class="step-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                        </div>
-                        <h3>Kickoff & Context Capture</h3>
-                        <p>Share your agent's repo, architecture docs, and key pain points in a 30-minute kick-off call (NDA in place).</p>
-                    </div>
-                    <div class="audit-step">
-                        <div class="step-indicator" aria-hidden="true">
-                            <div class="step-circle">02</div>
-                            <div class="step-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                        </div>
-                        <h3>48-Hour Deep-Dive Audit</h3>
-                        <p>Our senior engineers run an AI-powered review against security, scalability, and integration checklists.</p>
-                    </div>
-                    <div class="audit-step">
-                        <div class="step-indicator" aria-hidden="true">
-                            <div class="step-circle">03</div>
-                        </div>
-                        <h3>Hands-On Fix & Next Steps</h3>
-                        <p>We deliver a working fix for your immediate problem plus a root-cause summary and a prioritized roadmap.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" aria-labelledby="contact-title">
-            <div class="container">
-                <h2 id="contact-title">Let's Build Your <span>Next AI Agent</span></h2>
+                <h2>Let's Build Your <span>Next AI Agent</span></h2>
                 <p class="lead">Ready to transform your business? Fill out the form to schedule a complimentary strategy session with our AI experts.</p>
                 
                 <form class="contact-form" action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST">
@@ -391,7 +327,6 @@
                         <li><a href="#hero">Home</a></li>
                         <li><a href="#solutions">Services</a></li>
                         <li><a href="#workflow">Workflow</a></li>
-                        <li><a href="#agent-audit">Agent Audit</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -399,8 +334,8 @@
                     <h4>Connect</h4>
                     <p><a href="mailto:hello@agentbiz.ai">hello@agentbiz.ai</a></p>
                     <div class="social-icons">
-                        <a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="X (formerly Twitter) Profile"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="X (formerly Twitter)"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
