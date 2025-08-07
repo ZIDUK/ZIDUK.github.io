@@ -4,24 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgentBiz - Strategic AI Agents for Business Transformation</title>
-    <meta name="description" content="AgentBiz designs and deploys custom AI agents to automate your critical business processes, unlock data insights, and drive operational efficiency.">
+    <meta name="description" content="AgentBiz designs and deploys custom AI agents to automate critical business processes, unlock data insights, and drive operational efficiency.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        /* --- BRAND VARIABLES --- */
         :root {
             --dark-bg: #000000; --light-text: #F5F5F7; --secondary-text: #A1A1A6;
             --primary-accent-start: #007BFF; --primary-accent-end: #8A2BE2;
             --accent-gradient: linear-gradient(90deg, var(--primary-accent-start), var(--primary-accent-end));
             --card-bg: #111111; --border-color: #222222;
         }
-
-        /* --- GENERAL STYLES --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
@@ -33,7 +30,7 @@
         h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; letter-spacing: -1px; }
         h1 { font-size: 3.8rem; }
         h2 { font-size: 2.8rem; text-align: center; margin-bottom: 70px; }
-        h3 { font-size: 2.2rem; margin-bottom: 30px; }
+        h3 { font-size: 1.4rem; margin-bottom: 15px; }
         h4 { font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; color: var(--secondary-text); }
         h1 span, h2 span, h3 span { background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
         p { margin-bottom: 20px; font-weight: 400; color: var(--secondary-text); }
@@ -69,21 +66,58 @@
         #hero h1 { margin-bottom: 25px; }
         #hero .lead { margin-bottom: 30px; }
         
-        /* --- SOLUTIONS HUB SECTION --- */
-        .solutions-hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .solution-hub-card {
-            background: var(--card-bg); padding: 30px; border-radius: 12px; border: 1px solid var(--border-color);
-            text-decoration: none; color: var(--light-text); display: flex; flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* --- SOLUTIONS GRID SECTION (NEW) --- */
+        .solutions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .solution-card {
+            background-color: var(--card-bg); padding: 30px 35px; border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            text-decoration: none; color: var(--light-text);
         }
-        .solution-hub-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
-        .solution-hub-card h3 { font-size: 1.5rem; margin-bottom: 15px; letter-spacing: -0.5px;}
-        .solution-hub-card p { flex-grow: 1; }
-        .solution-hub-card .learn-more {
-            font-weight: 600; margin-top: 20px; display: inline-block;
-            background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; color: transparent;
-        }
+        a.solution-card:hover { transform: translateY(-8px); border-color: var(--primary-accent-start); }
+        .solution-card .icon { font-size: 2rem; margin-bottom: 20px; color: var(--primary-accent-start); }
+        .solution-card h3 { font-size: 1.3rem; color: var(--light-text); letter-spacing: -0.5px; }
+        .solution-card ul { list-style: none; padding-left: 0; }
+        .solution-card ul li { position: relative; padding-left: 20px; margin-bottom: 8px; font-size: 0.95rem; }
+        .solution-card ul li::before { content: '•'; position: absolute; left: 0; color: var(--primary-accent-start); }
 
+        /* --- AI WORKFLOW SECTION --- */
+        #workflow { background-color: var(--card-bg); }
+        .workflow-timeline {
+            position: relative;
+            display: grid; grid-template-columns: repeat(5, 1fr);
+            padding: 50px 0;
+        }
+        .workflow-timeline::before {
+            content: ''; position: absolute; top: 50%; left: 10%; right: 10%;
+            height: 2px; background-image: linear-gradient(to right, var(--secondary-text) 50%, transparent 50%);
+            background-size: 15px 2px; background-repeat: repeat-x; transform: translateY(-1px);
+        }
+        .workflow-step {
+            position: relative; text-align: center;
+            display: flex; flex-direction: column; padding: 0 10px;
+        }
+        .workflow-step.step-top { justify-content: flex-end; padding-bottom: 70px; }
+        .workflow-step.step-bottom { justify-content: flex-start; padding-top: 70px; }
+        .step-icon {
+            width: 80px; height: 80px; border-radius: 50%;
+            border: 2px solid; border-image-slice: 1; border-image-source: var(--accent-gradient);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; margin: 0 auto; background: var(--card-bg);
+        }
+        .step-icon i { background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .workflow-step::after {
+            content: ''; position: absolute; left: 50%; width: 2px;
+            background-image: linear-gradient(to bottom, var(--secondary-text) 50%, transparent 50%);
+            background-size: 2px 15px; background-repeat: repeat-y;
+        }
+        .step-top::after { top: calc(50% + 40px); height: 30px; }
+        .step-bottom::after { bottom: calc(50% + 40px); height: 30px; }
+        .step-content { margin-top: 20px; }
+        .step-top .step-content { position: absolute; bottom: 100%; transform: translateY(-130px); width: 100%; }
+        .step-bottom .step-content { position: absolute; top: 100%; transform: translateY(130px); width: 100%; }
+        .workflow-step h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--light-text); }
+        
         /* --- SERVICE DETAIL LAYOUT --- */
         .service-detail-layout { display: grid; grid-template-columns: 280px 1fr; gap: 80px; }
         .service-nav { position: sticky; top: 120px; align-self: start; }
@@ -108,43 +142,6 @@
         .plan-card .price { font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; }
         .plan-card .price span { font-size: 1rem; color: var(--secondary-text); font-weight: 400; }
         .plan-card .cta-button { width: 100%; }
-        
-        /* --- AI WORKFLOW SECTION (NEW) --- */
-        #workflow { background-color: var(--card-bg); }
-        .workflow-timeline {
-            position: relative;
-            display: grid; grid-template-columns: repeat(5, 1fr);
-            padding: 50px 0;
-        }
-        .workflow-timeline::before { /* The main dotted line */
-            content: ''; position: absolute; top: 50%; left: 10%; right: 10%;
-            height: 2px; background-image: linear-gradient(to right, var(--secondary-text) 50%, transparent 50%);
-            background-size: 15px 2px; background-repeat: repeat-x; transform: translateY(-1px);
-        }
-        .workflow-step {
-            position: relative; text-align: center;
-            display: flex; flex-direction: column; padding: 0 10px;
-        }
-        .workflow-step.step-top { justify-content: flex-end; padding-bottom: 70px; }
-        .workflow-step.step-bottom { justify-content: flex-start; padding-top: 70px; }
-        .step-icon {
-            width: 80px; height: 80px; border-radius: 50%;
-            border: 2px solid; border-image-slice: 1; border-image-source: var(--accent-gradient);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 2rem; margin: 0 auto; background: var(--card-bg);
-        }
-        .step-icon i { background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .workflow-step::after { /* The vertical connecting line */
-            content: ''; position: absolute; left: 50%; width: 2px;
-            background-image: linear-gradient(to bottom, var(--secondary-text) 50%, transparent 50%);
-            background-size: 2px 15px; background-repeat: repeat-y;
-        }
-        .step-top::after { top: calc(50% + 40px); height: 30px; }
-        .step-bottom::after { bottom: calc(50% + 40px); height: 30px; }
-        .step-content { margin-top: 20px; }
-        .step-top .step-content { position: absolute; bottom: 100%; transform: translateY(-130px); width: 100%; }
-        .step-bottom .step-content { position: absolute; top: 100%; transform: translateY(130px); width: 100%; }
-        .workflow-step h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--light-text); }
 
         /* --- CONTACT FORM --- */
         #contact .container { max-width: 800px; }
@@ -183,6 +180,7 @@
 
         /* --- RESPONSIVE ADJUSTMENTS --- */
         @media(max-width: 992px) {
+            .solutions-grid { grid-template-columns: repeat(2, 1fr); }
             .service-detail-layout { grid-template-columns: 1fr; }
             .service-nav { position: static; margin-bottom: 40px; }
             .service-nav ul { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
@@ -199,8 +197,8 @@
             h1 { font-size: 2.8rem; letter-spacing: -1px;}
             h2 { font-size: 2.2rem; }
             .header .container { justify-content: space-between; }
-            .main-nav, .header-cta { display: none; } /* Hide for simple mobile view, can be replaced with burger menu */
-            .solutions-hub-grid { grid-template-columns: 1fr; }
+            .main-nav, .header-cta { display: none; }
+            .solutions-grid { grid-template-columns: 1fr; }
             .form-row { grid-template-columns: 1fr; }
         }
     </style>
@@ -211,9 +209,10 @@
         <div class="container">
             <a href="#hero" class="logo">Agent<span>Biz</span></a>
             <nav class="main-nav">
-                <a href="#solutions" class="active">Solutions</a>
-                <a href="#discovery-service">Discovery</a>
+                <a href="#solutions" class="active">Services</a>
                 <a href="#workflow">Workflow</a>
+                <a href="#discovery-service">Discovery</a>
+                <a href="#development-service">Development</a>
                 <a href="#contact">Contact</a>
             </nav>
             <a href="#contact" class="header-cta">Talk to an Expert</a>
@@ -227,28 +226,67 @@
                 <p class="lead">
                    We are your strategic partner in AI adoption. We design, build, and deploy custom artificial intelligence agents that automate critical processes, unlock data value, and drive unprecedented operational efficiency.
                 </p>
-                <a href="#solutions" class="cta-button">Discover Our Solutions</a>
+                <a href="#solutions" class="cta-button">Explore Our Services</a>
             </div>
         </section>
 
         <section id="solutions">
             <div class="container">
                 <h2>Our AI Services and <span>Solutions</span></h2>
-                <div class="solutions-hub-grid">
-                    <a href="#discovery-service" class="solution-hub-card">
-                        <h3>AI Discovery & Strategy</h3>
-                        <p>We analyze your processes and data to create a clear AI roadmap with a defined ROI. Ideal if you don't know where to start.</p>
-                        <span class="learn-more">Learn More →</span>
+                <div class="solutions-grid">
+                    <a href="#discovery-service" class="solution-card">
+                        <div class="icon"><i class="fas fa-star"></i></div>
+                        <h3>AI Strategy & Consultation</h3>
+                        <ul>
+                            <li>Develop a custom AI roadmap aligned with business goals.</li>
+                            <li>Identify high-impact AI opportunities to drive business.</li>
+                            <li>AI solution design, implementation, and deployment.</li>
+                        </ul>
                     </a>
-                    <a href="#development-service" class="solution-hub-card">
-                        <h3>Custom Agent Development</h3>
-                        <p>We design, build, and deploy custom AI agents that integrate seamlessly with your systems and solve your most complex challenges.</p>
-                        <span class="learn-more">Learn More →</span>
+                    <a href="#development-service" class="solution-card">
+                        <div class="icon"><i class="fas fa-cogs"></i></div>
+                        <h3>Custom Agent Solutions</h3>
+                        <ul>
+                            <li>Custom model creation (Generative AI, LLMs).</li>
+                            <li>AI-powered automation tools to optimize workflows.</li>
+                            <li>End-to-end agent development and deployment.</li>
+                        </ul>
                     </a>
-                    <div class="solution-hub-card">
-                        <h3>Agent Management & Optimization</h3>
-                        <p>We offer support, monitoring, and continuous optimization to ensure your agents operate at peak efficiency and evolve with your business.</p>
-                        <span class="learn-more">Coming Soon</span>
+                    <div class="solution-card">
+                        <div class="icon"><i class="fas fa-plug"></i></div>
+                        <h3>AI Integration Services</h3>
+                        <ul>
+                            <li>Seamlessly integrate AI into existing IT infrastructure.</li>
+                            <li>Connect AI with CRM, ERP, and other business tools.</li>
+                            <li>Cloud integration (AWS, Google Cloud).</li>
+                        </ul>
+                    </div>
+                    <div class="solution-card">
+                        <div class="icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Agent-Powered Products</h3>
+                        <ul>
+                            <li>Build AI-first digital products for competitive advantage.</li>
+                            <li>Implement agent-powered features in SaaS.</li>
+                            <li>Personalization and intelligent virtual assistants.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-card">
+                        <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>AI Maintenance & Support</h3>
+                        <ul>
+                            <li>Continuous monitoring, updates, and optimization.</li>
+                            <li>Ensure AI solutions remain secure and compliant.</li>
+                            <li>Ongoing support to keep AI models adaptable.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-card">
+                        <div class="icon"><i class="fas fa-microscope"></i></div>
+                        <h3>AI Agent Audit & Fix</h3>
+                        <ul>
+                            <li>Expert review of your existing AI agents.</li>
+                            <li>Identify performance, security, and cost issues.</li>
+                            <li>Provide a roadmap for immediate improvements.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -328,7 +366,7 @@
                             <ul>
                                 <li><strong>AI Opportunity Report:</strong> A detailed document identifying and scoring 1-3 AI agent use-cases with the greatest potential impact.</li>
                                 <li><strong>Process & Architecture Map:</strong> A high-level diagram showing how an AI agent would integrate into your current workflow.</li>
-                                <li><strong>ROI & Cost Projection:</strong> An estimate of the required investment and the expected return (in time saved, error reduction, or revenue increase).</li>
+                                <li><strong>ROI & Cost Projection:</strong> An estimate of the required investment and the expected return.</li>
                                 <li><strong>Strategic Roadmap:</strong> A recommended project plan with clear phases, timelines, and next steps.</li>
                             </ul>
                         </div>
@@ -433,7 +471,7 @@
                     <h4>Sitemap</h4>
                     <ul>
                         <li><a href="#hero">Home</a></li>
-                        <li><a href="#solutions">Solutions</a></li>
+                        <li><a href="#solutions">Services</a></li>
                         <li><a href="#workflow">Workflow</a></li>
                         <li><a href="#discovery-service">AI Discovery</a></li>
                         <li><a href="#development-service">Custom Development</a></li>
