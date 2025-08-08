@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgentBiz - Strategic AI Agents for Business Transformation</title>
-    <meta name="description" content="AgentBiz designs and deploys custom AI agents to automate critical business processes, unlock data insights, and drive operational efficiency.">
+    <meta name="description" content="AgentBiz designs and deploys custom AI agents to automate your critical business processes, unlock data insights, and drive operational efficiency.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,9 +29,8 @@
         section { padding: 120px 0; border-bottom: 1px solid var(--border-color); }
         h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; letter-spacing: -1px; }
         h1 { font-size: 3.8rem; }
-        h2 { font-size: 2.8rem; text-align: center; margin-bottom: 70px; }
-        h3 { font-size: 2.2rem; margin-bottom: 30px; }
-        h4 { font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; color: var(--secondary-text); }
+        h2 { font-size: 2.8rem; text-align: center; margin-bottom: 80px; }
+        h3 { font-size: 1.4rem; margin-bottom: 15px; }
         h1 span, h2 span, h3 span { background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
         p { margin-bottom: 20px; font-weight: 400; color: var(--secondary-text); }
         .lead { font-size: 1.25rem; color: #D2D2D7; max-width: 800px; margin-left: auto; margin-right: auto; }
@@ -51,12 +50,8 @@
         .logo { font-size: 1.8rem; font-weight: 800; color: var(--light-text); text-decoration: none; letter-spacing: -1px; }
         .logo span { background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; font-weight: 800; }
         .main-nav { display: flex; align-items: center; gap: 35px; }
-        .main-nav a {
-            color: var(--secondary-text); text-decoration: none; font-weight: 500; font-size: 0.95rem;
-            transition: color 0.3s ease; padding: 5px 0; border-bottom: 2px solid transparent;
-        }
+        .main-nav a { color: var(--secondary-text); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.3s ease; }
         .main-nav a:hover { color: var(--light-text); }
-        .main-nav a.active { color: var(--light-text); border-bottom: 2px solid var(--primary-accent-start); }
         .header-cta { background: var(--accent-gradient); color: #FFFFFF; padding: 10px 22px; border: none; border-radius: 8px; font-weight: 500; font-size: 0.95rem; cursor: pointer; text-decoration: none; transition: transform 0.3s ease; }
         .header-cta:hover { transform: scale(1.05); }
 
@@ -70,59 +65,51 @@
         .solutions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         .solution-card {
             background-color: var(--card-bg); padding: 30px 35px; border-radius: 12px;
-            border: 1px solid var(--border-color); text-decoration: none; color: var(--light-text);
-            transition: transform 0.3s ease, border-color 0.3s ease; display: block;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
         .solution-card:hover { transform: translateY(-8px); border-color: var(--primary-accent-start); }
         .solution-card .icon { font-size: 2rem; margin-bottom: 20px; color: var(--primary-accent-start); }
-        .solution-card h3 { font-size: 1.3rem; letter-spacing: -0.5px; }
+        .solution-card h3 { font-size: 1.3rem; color: var(--light-text); letter-spacing: -0.5px; }
         .solution-card ul { list-style: none; padding-left: 0; }
         .solution-card ul li { position: relative; padding-left: 20px; margin-bottom: 8px; font-size: 0.95rem; }
         .solution-card ul li::before { content: '•'; position: absolute; left: 0; color: var(--primary-accent-start); }
 
-        /* --- SERVICE DETAIL LAYOUT --- */
-        .service-detail-layout { display: grid; grid-template-columns: 280px 1fr; gap: 80px; }
-        .service-nav { position: sticky; top: 120px; align-self: start; }
-        .service-nav ul { list-style: none; }
-        .service-nav ul li a {
-            display: block; padding: 12px 15px; margin-bottom: 8px; border-radius: 8px;
-            text-decoration: none; color: var(--secondary-text); font-weight: 500;
-            transition: background-color 0.3s, color 0.3s;
+        /* --- AI WORKFLOW SECTION --- */
+        #workflow { background-color: var(--card-bg); }
+        .workflow-timeline {
+            display: grid; grid-template-columns: repeat(5, 1fr); align-items: center;
+            position: relative; padding: 40px 0;
         }
-        .service-nav ul li a:hover { background-color: var(--card-bg); color: var(--light-text); }
-        .service-nav ul li a.active { background-color: var(--card-bg); color: var(--light-text); font-weight: 600; }
-        .service-content-section { padding-top: 20px; margin-bottom: 80px; }
-        .service-content ul { list-style: none; padding-left: 0; }
-        .service-content ul li { position: relative; padding-left: 30px; margin-bottom: 15px; font-size: 1.1rem; }
-        .service-content ul li::before {
-            content: '✓'; font-weight: 600; position: absolute; left: 0; top: 0;
-            background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; color: transparent;
+        .workflow-timeline::before {
+            content: ''; position: absolute; top: 50px; left: 5%; width: 90%;
+            height: 2px; transform: translateY(-50%);
+            background-image: linear-gradient(to right, var(--secondary-text) 33%, rgba(255,255,255,0) 0%);
+            background-position: bottom; background-size: 15px 2px; background-repeat: repeat-x;
         }
-        .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .plan-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 30px; text-align: center; }
-        .plan-card h4 { text-transform: none; letter-spacing: -0.5px; font-size: 1.3rem; margin-bottom: 15px; color: var(--light-text); }
-        .plan-card .price { font-size: 1.8rem; font-weight: 700; margin-bottom: 20px; }
-        .plan-card .price span { font-size: 1rem; color: var(--secondary-text); font-weight: 400; }
-        .plan-card .cta-button { width: 100%; }
+        .workflow-step { display: flex; flex-direction: column; align-items: center; gap: 20px; position: relative; }
+        .workflow-step.step-top { flex-direction: column-reverse; }
+        .step-icon {
+            width: 90px; height: 90px; border-radius: 20px;
+            border: 2px solid; border-image-slice: 1; border-image-source: var(--accent-gradient);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2.2rem; background-color: var(--card-bg); z-index: 2;
+        }
+        .step-icon i { background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .step-content { text-align: center; }
+        .step-content h3 { font-size: 1.2rem; color: var(--light-text); margin-bottom: 8px; }
+        .step-content p { font-size: 0.9rem; line-height: 1.5; }
+        .workflow-step::after {
+            content: ''; position: absolute; left: 50%; width: 2px; height: 40px;
+            background-color: var(--secondary-text); z-index: 1;
+        }
+        .workflow-step.step-top::after { top: 50%; }
+        .workflow-step.step-bottom::after { bottom: 50%; }
 
-        /* --- CONTACT FORM --- */
-        #contact .container { max-width: 800px; }
-        .contact-form { margin-top: 50px; text-align: left; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .form-group { display: flex; flex-direction: column; margin-bottom: 20px; }
-        .form-group label { margin-bottom: 8px; font-weight: 500; font-size: 0.9rem; color: var(--secondary-text); }
-        .form-group input, .form-group textarea {
-            background-color: #0A0A0A; border: 1px solid var(--border-color); border-radius: 8px;
-            padding: 14px; color: var(--light-text); font-family: 'Inter', sans-serif;
-            font-size: 1rem; transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none; border-color: var(--primary-accent-start); box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
-        }
-        .form-group textarea { resize: vertical; min-height: 120px; }
-        .form-full-width { grid-column: 1 / -1; }
-        .submit-button-wrapper { text-align: center; }
-
+        /* --- CONTACT SECTION --- */
+        #contact { text-align: center; }
+        #contact .container { max-width: 900px; }
+        
         /* --- FOOTER --- */
         footer { padding: 60px 0; background-color: #050505; border-top: 1px solid var(--border-color); }
         .footer-grid {
@@ -141,11 +128,12 @@
         .footer-copyright { text-align: center; padding-top: 30px; border-top: 1px solid var(--border-color); color: #888; font-size: 0.9rem; }
 
         /* --- RESPONSIVE ADJUSTMENTS --- */
-        @media(max-width: 992px) {
+        @media(max-width: 1024px) {
             .solutions-grid { grid-template-columns: repeat(2, 1fr); }
-            .service-detail-layout { grid-template-columns: 1fr; }
-            .service-nav { position: static; margin-bottom: 40px; }
-            .service-nav ul { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+            .workflow-timeline { display: flex; flex-direction: column; gap: 40px; }
+            .workflow-timeline::before, .workflow-step::after { display: none; }
+            .workflow-step, .workflow-step.step-top, .workflow-step.step-bottom { flex-direction: row; text-align: left; gap: 25px; }
+            .step-icon { width: 70px; height: 70px; font-size: 2rem; flex-shrink: 0; }
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
             .social-icons { justify-content: center; }
         }
@@ -154,7 +142,6 @@
             h2 { font-size: 2.2rem; }
             .main-nav, .header-cta { display: none; }
             .solutions-grid { grid-template-columns: 1fr; }
-            .form-row { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -164,12 +151,11 @@
         <div class="container">
             <a href="#hero" class="logo">Agent<span>Biz</span></a>
             <nav class="main-nav">
-                <a href="#solutions" class="active">Services</a>
-                <a href="#discovery-service">Discovery</a>
-                <a href="#development-service">Development</a>
+                <a href="#solutions">Services</a>
+                <a href="#workflow">Workflow</a>
                 <a href="#contact">Contact</a>
             </nav>
-            <a href="#contact" class="header-cta">Talk to an Expert</a>
+            <a href="#contact" class="header-cta">Book a Call</a>
         </div>
     </header>
 
@@ -180,7 +166,7 @@
                 <p class="lead">
                    We are your strategic partner in AI adoption. We design, build, and deploy custom artificial intelligence agents that automate critical processes, unlock data value, and drive unprecedented operational efficiency.
                 </p>
-                <a href="#solutions" class="cta-button">Explore Our Services</a>
+                <a href="#contact" class="cta-button">Book a Free Strategy Call</a>
             </div>
         </section>
 
@@ -188,7 +174,7 @@
             <div class="container">
                 <h2>Our AI Services and <span>Solutions</span></h2>
                 <div class="solutions-grid">
-                    <a href="#discovery-service" class="solution-card">
+                    <div class="solution-card">
                         <div class="icon"><i class="fas fa-star"></i></div>
                         <h3>AI Strategy & Consultation</h3>
                         <ul>
@@ -196,8 +182,8 @@
                             <li>Identify high-impact AI opportunities to drive business.</li>
                             <li>AI solution design, implementation, and deployment.</li>
                         </ul>
-                    </a>
-                    <a href="#development-service" class="solution-card">
+                    </div>
+                    <div class="solution-card">
                         <div class="icon"><i class="fas fa-cogs"></i></div>
                         <h3>Custom Agent Solutions</h3>
                         <ul>
@@ -205,7 +191,7 @@
                             <li>AI-powered automation tools to optimize workflows.</li>
                             <li>End-to-end agent development and deployment.</li>
                         </ul>
-                    </a>
+                    </div>
                     <div class="solution-card">
                         <div class="icon"><i class="fas fa-plug"></i></div>
                         <h3>AI Integration Services</h3>
@@ -245,107 +231,44 @@
                 </div>
             </div>
         </section>
-        
-        <section id="discovery-service">
+
+        <section id="workflow">
             <div class="container">
-                <div class="service-detail-layout">
-                    <aside class="service-nav">
-                         <ul>
-                            <li><a href="#discovery-what" class="active">What It Is</a></li>
-                            <li><a href="#discovery-challenges">Challenges Solved</a></li>
-                            <li><a href="#discovery-deliverables">Deliverables</a></li>
-                            <li><a href="#discovery-plan">Plan & Pricing</a></li>
-                        </ul>
-                    </aside>
-                    <div class="service-content">
-                        <div id="discovery-what" class="service-content-section">
-                            <h3>AI Discovery & <span>Strategy Session</span></h3>
-                            <p class="lead">Get a clear, strategic roadmap for AI adoption in your company, identifying the use-cases with the highest potential ROI.</p>
-                            <p>This is an intensive, short-term consulting service where our AI experts dive deep into your business processes. The goal is to eliminate uncertainty and provide you with a concrete, prioritized action plan to start using AI agents effectively.</p>
-                        </div>
-                        <div id="discovery-challenges" class="service-content-section">
-                            <h4>Business Challenges We Solve</h4>
-                            <ul>
-                                <li>Uncertainty about the ROI of AI investments.</li>
-                                <li>Lack of in-house technical expertise to evaluate opportunities.</li>
-                                <li>Inefficient operational processes not clearly identified.</li>
-                                <li>Fear of investing in a large AI project without a solid business case.</li>
-                            </ul>
-                        </div>
-                        <div id="discovery-deliverables" class="service-content-section">
-                            <h4>Key Deliverables</h4>
-                            <ul>
-                                <li><strong>AI Opportunity Report:</strong> A detailed document identifying and scoring 1-3 AI agent use-cases with the greatest potential impact.</li>
-                                <li><strong>Process & Architecture Map:</strong> A high-level diagram showing how an AI agent would integrate into your current workflow.</li>
-                                <li><strong>ROI & Cost Projection:</strong> An estimate of the required investment and the expected return.</li>
-                                <li><strong>Strategic Roadmap:</strong> A recommended project plan with clear phases, timelines, and next steps.</li>
-                            </ul>
-                        </div>
-                        <div id="discovery-plan" class="service-content-section">
-                            <h4>Plan & Pricing</h4>
-                            <div class="plans-grid">
-                                <div class="plan-card">
-                                    <h4>AI Discovery & Strategy</h4>
-                                    <p class="price">$2,500 <span>USD</span></p>
-                                    <p>A fixed-price package for a complete analysis and a strategic roadmap. Duration: 1 Week.</p>
-                                    <a href="#contact" class="cta-button">Start My Discovery</a>
-                                </div>
-                            </div>
+                <h2>Our AI-Accelerated <span>Development Workflow</span></h2>
+                <div class="workflow-timeline">
+                    <div class="workflow-step step-top">
+                        <div class="step-icon"><i class="fas fa-bullseye"></i></div>
+                        <div class="step-content">
+                            <h3>Discovery Phase</h3>
+                            <p>Aligning business goals with AI agent capabilities.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="development-service" style="background-color: var(--card-bg);">
-            <div class="container">
-                <div class="service-detail-layout">
-                    <aside class="service-nav">
-                        <ul>
-                            <li><a href="#dev-what">What It Is</a></li>
-                            <li><a href="#dev-results">Business Outcomes</a></li>
-                            <li><a href="#dev-deliverables">Deliverables</a></li>
-                            <li><a href="#dev-plans">Engagement Models</a></li>
-                        </ul>
-                    </aside>
-                    <div class="service-content">
-                        <div id="dev-what" class="service-content-section">
-                            <h3>Custom Agent <span>Development</span></h3>
-                            <p class="lead">We build robust, scalable, and bespoke AI agents that become your team's most efficient members.</p>
-                            <p>This is our end-to-end engineering service where our expert team designs, develops, tests, and deploys a fully functional, production-ready AI agent. We handle the entire development lifecycle, from concept to final integration into your workflows.</p>
+                    <div class="workflow-step step-bottom">
+                        <div class="step-icon"><i class="fas fa-sitemap"></i></div>
+                        <div class="step-content">
+                            <h3>Planning & Architecture</h3>
+                            <p>Designing a scalable and secure agent architecture.</p>
                         </div>
-                        <div id="dev-results" class="service-content-section">
-                            <h4>Business Outcomes We Drive</h4>
-                            <ul>
-                                <li>Drastic reduction in time spent on manual, repetitive tasks.</li>
-                                <li>Increased accuracy and elimination of costly human errors.</li>
-                                <li>Instant access to business insights from complex data.</li>
-                                <li>Liberation of your team's talent to focus on strategic work.</li>
-                            </ul>
+                    </div>
+                    <div class="workflow-step step-top">
+                        <div class="step-icon"><i class="fas fa-code"></i></div>
+                        <div class="step-content">
+                            <h3>AI-Assisted Development</h3>
+                            <p>Using AI tools to accelerate coding and ensure quality.</p>
                         </div>
-                        <div id="dev-deliverables" class="service-content-section">
-                            <h4>Key Deliverables</h4>
-                             <ul>
-                                <li><strong>Functional AI Agent:</strong> A deployed, operational software agent.</li>
-                                <li><strong>System Integration:</strong> Seamless connection with your CRM, ERP, databases, etc.</li>
-                                <li><strong>Complete Documentation:</strong> Technical and user guides for managing the agent.</li>
-                                <li><strong>Team Training Session:</strong> A workshop to train your team on how to interact with their new agent.</li>
-                            </ul>
+                    </div>
+                    <div class="workflow-step step-bottom">
+                        <div class="step-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="step-content">
+                            <h3>Quality Assurance</h3>
+                            <p>AI-powered testing to ensure robust and reliable agents.</p>
                         </div>
-                        <div id="dev-plans" class="service-content-section">
-                            <h4>Engagement Models</h4>
-                            <div class="plans-grid">
-                                <div class="plan-card">
-                                    <h4>Pilot Project (PoC)</h4>
-                                    <p>Ideal for testing a specific use case with a limited scope. Duration: 4-6 Weeks.</p>
-                                    <a href="#contact" class="cta-button">Quote a Pilot</a>
-                                </div>
-                                <div class="plan-card">
-                                    <h4>Full-Scale Development</h4>
-                                    <p>To build a robust, complete solution for a critical business process. Duration: 3-6 Months.</p>
-                                    <a href="#contact" class="cta-button">Talk to an Architect</a>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="workflow-step step-top">
+                        <div class="step-icon"><i class="fas fa-rocket"></i></div>
+                        <div class="step-content">
+                            <h3>Delivery & Support</h3>
+                            <p>Delivering a robust MVP and providing ongoing optimization.</p>
                         </div>
                     </div>
                 </div>
@@ -354,19 +277,12 @@
         
         <section id="contact">
             <div class="container">
-                <h2>Let's Build Your <span>Next AI Agent</span></h2>
-                <p class="lead">Ready to transform your business? Fill out the form to schedule a complimentary strategy session with our AI experts.</p>
+                <h2>Schedule Your <span>AI Strategy Call</span></h2>
+                <p class="lead">Discover how our AI solutions can transform your business operations. Select a time that works best for you and let's talk about your ROI.</p>
                 
-                <form class="contact-form" action="https://formspree.io/f/xrbloera" method="POST">
-                    <div class="form-row">
-                        <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" required></div>
-                        <div class="form-group"><label for="email">Work Email</label><input type="email" id="email" name="email" required></div>
-                    </div>
-                    <div class="form-group form-full-width"><label for="company">Company</label><input type="text" id="company" name="company"></div>
-                    <div class="form-group form-full-width"><label for="message">What business challenge can we help you solve?</label><textarea id="message" name="message" required></textarea></div>
-                    <div class="submit-button-wrapper"><button type="submit" class="cta-button">Submit Request</button></div>
-                </form>
-            </div>
+                <div class="calendly-inline-widget" data-url="https://calendly.com/jonapardo92/30min?hide_event_type_details=1&background_color=000000&text_color=ffffff&primary_color=007bff" style="min-width:320px;height:700px;margin-top:40px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                </div>
         </section>
 
     </main>
@@ -383,8 +299,7 @@
                     <ul>
                         <li><a href="#hero">Home</a></li>
                         <li><a href="#solutions">Services</a></li>
-                        <li><a href="#discovery-service">AI Discovery</a></li>
-                        <li><a href="#development-service">Custom Development</a></li>
+                        <li><a href="#workflow">Workflow</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -403,41 +318,5 @@
         </div>
     </footer>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('main > section, .service-content-section');
-            const mainNavLinks = document.querySelectorAll('.main-nav a');
-            const serviceNavLinks = document.querySelectorAll('.service-nav a');
-
-            const observerOptions = { rootMargin: '-40% 0px -60% 0px' };
-            const headerObserverOptions = { threshold: 0.2, rootMargin: '-100px 0px 0px 0px' };
-
-            const serviceObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.id;
-                        serviceNavLinks.forEach(link => {
-                            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-                        });
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.service-content-section').forEach(section => serviceObserver.observe(section));
-            
-            const mainObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if(entry.isIntersecting){
-                        const id = entry.target.id;
-                        mainNavLinks.forEach(link => {
-                           link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-                        });
-                    }
-                });
-            }, headerObserverOptions);
-
-            document.querySelectorAll('main > section').forEach(section => mainObserver.observe(section));
-        });
-    </script>
 </body>
 </html>
